@@ -42,6 +42,9 @@
     <ClInclude Include="cNoQuirurgica.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="cRegistros.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cANPA.cpp">
@@ -69,6 +72,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="cNoQuirurgica.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="cRegistros.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
