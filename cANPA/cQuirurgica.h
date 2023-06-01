@@ -1,7 +1,8 @@
 #pragma once
 #ifndef _CQUIRURGICA_H 
 #define _CQUIRURGICA_H 
-#include "cPiezaOrt.h"
+
+#include "cPaciente.h"
 
 
 

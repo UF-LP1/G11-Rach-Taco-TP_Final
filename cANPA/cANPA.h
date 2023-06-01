@@ -10,7 +10,7 @@ class cANPA
 {
 public:
 	cANPA(vector<cRegistros> reg, vector <cOrtopedia> ortopedia);
-	bool chequeoalergias(cPersona);
+	bool chequeoalergias(cPaciente);
 	bool busquedapieza(cPiezaOrt);
 	void mandar_sol();
 

@@ -2,7 +2,7 @@
 #ifndef _CNOQUIRURGICA_H 
 #define _CNOQUIRURGICA_H 
 #include "cPiezaOrt.h"
-
+#include "cPaciente.h"
 
 class cNoQuirurgica: public cPiezaOrt
 {
