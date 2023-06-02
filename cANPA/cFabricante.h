@@ -2,6 +2,7 @@
 #ifndef _CFABRICANTE_H
 #define _CFABRICANTE_H
 #include <string>
+#include "cPiezaOrt.h"
 
 class cFabricante
 {

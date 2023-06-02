@@ -3,6 +3,8 @@
 #define _CREGISTROS_H
 #include <string>
 #include "cPiezaOrt.h"
+#include "cHospital.h"
+
 
 using namespace std;
 

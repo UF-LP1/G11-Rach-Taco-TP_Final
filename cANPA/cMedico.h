@@ -3,7 +3,8 @@
 #define _CMEDICO_H
 
 #include <string>
-#include <vector>
+#include "cHospital.h"
+#include <vector> 
 using namespace std;
 class cMedico
 {
