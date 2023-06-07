@@ -26,9 +26,8 @@ public:
 	void set_documento(string doc);
 	string get_telefono();
 	void set_telefono(string tele);
-		vector <cHospital> get_hospital();
-		unsigned int get_radio();
-		void set_radio(unsigned int rad);
+		cHospital* get_hospital();
+		
 		vector <cPiezaOrt> get_protesis();
 	
 	~cPaciente();
@@ -39,7 +38,7 @@ private:
 	tm FechaNacimiento;
 	string Documento;
 	string Telefono;
-	vector<cHospital> hospital;
+ cHospital* hospital;
 	enum alergias;
 	unsigned int RadioAmp;
 	vector<cPiezaOrt> ProtesisNecesaria;

@@ -52,3 +52,26 @@ cHospital::~cHospital()
 {
 
 }
+
+ostream& operator<<(ostream& out, const cHospital aux)
+{
+	int i = 0;
+
+	vector <cPaciente> aux2 = aux.Pacientes;
+
+	for (i = 0; i < aux2.size(); i++) {
+
+		cHospital* aux3 = aux2[i].get_hospital();
+
+		out << aux2[i].get_nombre() << endl;
+		out << aux2[i].get_apellido() << endl;
+		out << aux2[i].get_documento() << endl;
+		out << aux2[i].get_fecha().tm_year << endl << aux2[i].get_fecha().tm_mon << endl << aux2[i].get_fecha().tm_wday << endl;
+		out << aux3->Nombre << endl;
+		out << aux2[i].get_RadioAmp() << endl;
+		out << aux2[i].get_telefono() << endl;
+		
+	}
+		return out;
+}
+

@@ -22,7 +22,7 @@ public:
 	vector <cPaciente> get_pacientes();
 	string get_especialidad();
 	void set_especialidad(string espe);
-	
+	friend ostream& operator<<(ostream& out, const cHospital aux);
 	
 	
 	~cHospital();

@@ -1,6 +1,6 @@
 #include "cRegistros.h"
 
-cRegistros::cRegistros(vector<cHospital> hos, vector<cMedico> med, vector<cPiezaOrt> pie, vector<cPaciente> pac, tm fechasol, tm fechaentreg, tm fechaest)
+cRegistros::cRegistros(cHospital* hos,cMedico* med, cPiezaOrt* pie, cPaciente* pac, tm fechasol, tm fechaentreg, tm fechaest)
 {
 }
 
@@ -18,22 +18,22 @@ string cRegistros::imprimirProtesis(cPaciente)
 	return string();
 }
 
-vector<cHospital> cRegistros::get_hospi()
+cHospital* cRegistros::get_hospi()
 {
 	return this->hospital;
 }
 
-vector<cMedico> cRegistros::get_med()
+cMedico* cRegistros::get_med()
 {
 	return this->medico;
 }
 
-vector<cPiezaOrt> cRegistros::get_peiza()
+cPiezaOrt* cRegistros::get_peiza()
 {
 	return this->piezaort;
 }
 
-vector<cPaciente> cRegistros::get_pac()
+cPaciente* cRegistros::get_pac()
 {
 	return this->paciente;
 }

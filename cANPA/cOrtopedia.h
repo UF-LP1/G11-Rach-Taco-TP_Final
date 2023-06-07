@@ -2,7 +2,7 @@
 #ifndef _CORTOPEDIA_H
 #define _CORTOPEDIA_H
 #include "cHospital.h"
-
+using namespace std;
 
 class cOrtopedia
 {
@@ -19,6 +19,8 @@ public:
 	string get_especializacion();
 	void set_especializacion(string espe);
 	vector <cHospital> get_convenio();
+
+	friend ostream& operator<<(ostream& out, const cOrtopedia& ort);
 
 	~cOrtopedia();
 

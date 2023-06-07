@@ -80,7 +80,7 @@ void cPaciente::set_telefono(string tele)
 	this->Telefono = tele;
 }
 
-vector<cHospital> cPaciente::get_hospital()
+cHospital* cPaciente::get_hospital()
 {
 	return this->hospital;
 }

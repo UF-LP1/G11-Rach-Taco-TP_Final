@@ -11,16 +11,16 @@ using namespace std;
 class cRegistros
 {
 public:
-	cRegistros(vector<cHospital> hos, vector<cMedico> med, vector<cPiezaOrt> pie, vector<cPaciente> pac, tm fechasol, tm fechaentreg, tm fechaest);
+	cRegistros(cHospital* hos, cMedico* med, cPiezaOrt* pie, cPaciente* pac, tm fechasol, tm fechaentreg, tm fechaest);
 
 	void buscarPaciente(cPaciente);
 	string imprimirPaciente(cPaciente);
 	string imprimirProtesis(cPaciente);
 
-	vector <cHospital> get_hospi();
-	vector <cMedico > get_med();
-	vector <cPiezaOrt> get_peiza();
-	vector <cPaciente> get_pac();
+	cHospital* get_hospi();
+	cMedico* get_med();
+	cPiezaOrt* get_peiza();
+	cPaciente* get_pac();
 	tm get_fechasoli();
 	void set_fechasoli(tm fe);
 	tm get_fechaentrega();
@@ -34,10 +34,10 @@ public:
 
 
 private:
-	vector<cHospital> hospital;
-	vector<cMedico> medico;
-	vector<cPiezaOrt> piezaort;
-	vector<cPaciente> paciente;
+	cHospital* hospital;
+	cMedico* medico;
+	cPiezaOrt* piezaort;
+	cPaciente* paciente;
 	tm FechaDeSolicitud;
 	tm FechaEntrega;
 	tm FechaEstimadaEntrega;
