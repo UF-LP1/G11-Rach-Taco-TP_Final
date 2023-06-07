@@ -12,7 +12,17 @@ using namespace std;
 class cPiezaOrt
 {
 public:
-	cPiezaOrt(string dim, string tipo,string train,time_t fecha,cFabricante fab);
+	cPiezaOrt(string dim, string tipo,string train,tm fecha,cFabricante* fab);
+
+	string get_dimensiones();
+	void set_dimensiones(string dim);
+	string get_tipo();
+	void set_tipo(string tipo);
+	string get_tren();
+	void set_tren(string train);
+	tm get_fecha();
+	void set_fecha(tm fecha);
+
 
 
 
@@ -21,8 +31,8 @@ private:
 	string Dimensiones;
 	string TipodeMaterial; //capaz enum
 	string Tren;
-	time_t FechaFab;
-	cFabricante fabr;
+	tm FechaFab;
+	cFabricante* fabr;
 
 };
 

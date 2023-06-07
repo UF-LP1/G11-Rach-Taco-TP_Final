@@ -13,6 +13,12 @@ public:
 	void rechazarsolicitud();
 	void fabricarprotesis(cPiezaOrt);
 
+	string get_nombre();
+	void set_nombre(string nom);
+	string get_apellido();
+	void set_apellido(string ape);
+	unsigned int get_numerodehab();
+	void set_numerodehab(unsigned int num);
 
 	~cFabricante();
 private:

@@ -14,6 +14,10 @@ public:
 	bool busquedapieza(cPiezaOrt);
 	void mandar_sol();
 
+	vector<cRegistros> get_registros();
+
+	vector<cOrtopedia> get_ort();
+
 	~cANPA();
 private:
 

@@ -22,6 +22,16 @@ void cANPA::mandar_sol()
 
 }
 
+vector<cRegistros> cANPA::get_registros()
+{
+	return this->registros;
+}
+
+vector<cOrtopedia> cANPA::get_ort()
+{
+	return this->Ortopedias;
+}
+
 cANPA::~cANPA()
 {
 

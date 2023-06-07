@@ -1,12 +1,13 @@
 #include "cPaciente.h"
 
-cPaciente::cPaciente(string nom, string ape, time_t fechanac, unsigned int doc, string tel, vector<cHospital> hos, aler, unsigned int radamp, vector<cPiezaOrt> pieznec)
+cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel, vector<cHospital> hos, aler, unsigned int radamp, vector<cPiezaOrt> pieznec)
 {
 	this->Nombre = nom;
 	this->Apellido = ape;
 	this->Documento = doc;
 	this->Telefono = tel;
 	this->RadioAmp = radamp;
+	this->FechaNacimiento = fechanac;
 }
 
 unsigned int cPaciente::get_RadioAmp()
@@ -25,6 +26,70 @@ void cPaciente::ir_ortopedia()
 
 void cPaciente::PedirListaOrtopedias(cOrtopedia)
 {
+}
+
+string cPaciente::get_nombre()
+{
+	return this->Nombre;
+}
+
+void cPaciente::set_nombre(string nom)
+{
+	this->Nombre = nom;
+}
+
+string cPaciente::get_apellido()
+{
+	return this->Apellido;
+}
+
+void cPaciente::set_apellido(string ape)
+{
+	this->Apellido = ape;
+}
+
+tm cPaciente::get_fecha()
+{
+	return this->FechaNacimiento;
+}
+
+void cPaciente::set_fecha(tm fech)
+{
+	this->FechaNacimiento = fech;
+
+}
+
+string cPaciente::get_documento()
+{
+	return this->Documento;
+}
+
+void cPaciente::set_documento(string doc)
+{
+	this->Documento = doc;
+
+}
+
+string cPaciente::get_telefono()
+{
+	return this->Telefono;
+}
+
+void cPaciente::set_telefono(string tele)
+{
+	this->Telefono = tele;
+}
+
+vector<cHospital> cPaciente::get_hospital()
+{
+	return this->hospital;
+}
+
+
+
+vector<cPiezaOrt> cPaciente::get_protesis()
+{
+	return this->ProtesisNecesaria;
 }
 
 cPaciente::~cPaciente()

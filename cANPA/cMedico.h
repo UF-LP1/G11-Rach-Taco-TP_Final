@@ -14,6 +14,13 @@ public:
 	void entregarsolicitud();
 	void solicitarprotesis();
 
+	string get_nombre();
+	void set_nombre(string nom);
+	string get_apellido();
+	void set_apellido(string ape);
+	string get_matricula();
+	void set_matricula(string matri);
+	vector <cHospital> get_hospital();
 	~cMedico();
 
 
