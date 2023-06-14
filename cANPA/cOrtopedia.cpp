@@ -1,6 +1,6 @@
 #include "cOrtopedia.h"
 int stock = 0;
-cOrtopedia::cOrtopedia(string nom, string dir, vector<cPiezaOrt> piezort, string espe, vector<cHospital> conv)
+cOrtopedia::cOrtopedia(string nom, string dir, vector<cPiezaOrt> piezort, espec espe, vector<cHospital> conv)
 {
 	this->Nombre = nom;
 	this->Direccion = dir;
@@ -42,12 +42,12 @@ int cOrtopedia::get_stock()
 	return stock;
 }
 
-string cOrtopedia::get_especializacion()
+espec cOrtopedia::get_especializacion()
 {
 	return this->especializacion;
 }
 
-void cOrtopedia::set_especializacion(string espe)
+void cOrtopedia::set_especializacion(espec espe)
 {
 	this->especializacion = espe;
 
@@ -58,13 +58,18 @@ vector<cHospital> cOrtopedia::get_convenio()
 	return this->convenio;
 }
 
-string cOrtopedia::to_string()
+string cOrtopedia::tostring()
 {
-	return string();
+	string resul = this->Nombre + " " + this->Direccion + " " + to_string(this->especializacion);
+
+
+
+	return resul;
 }
 
 void cOrtopedia::imprimir()
 {
+	cout << this->tostring();
 }
 
 cOrtopedia::~cOrtopedia()

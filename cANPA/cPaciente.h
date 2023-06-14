@@ -29,7 +29,7 @@ public:
 		cHospital* get_hospital();
 		
 		vector <cPiezaOrt> get_protesis();
-		string to_string();
+		string tostring();
 		void imprimir();
 	~cPaciente();
 

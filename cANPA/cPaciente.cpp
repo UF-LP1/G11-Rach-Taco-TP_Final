@@ -104,13 +104,16 @@ vector<cPiezaOrt> cPaciente::get_protesis()
 	return this->ProtesisNecesaria;
 }
 
-string cPaciente::to_string()
+string cPaciente::tostring()
 {
-	return string();
+	string resul = this->Nombre + " " + this->Apellido + " " + to_string(this->FechaNacimiento.tm_wday) + "/" + to_string(this->FechaNacimiento.tm_mon) + "/" + to_string(this->FechaNacimiento.tm_year) + " " + this->Documento + " " + this->Telefono + " " + to_string(this->Alergias) + " " + to_string(this->RadioAmp) + " " + to_string(this->protesis);
+
+	return resul;
 }
 
 void cPaciente::imprimir()
 {
+	cout << this->tostring();
 }
 
 cPaciente::~cPaciente()

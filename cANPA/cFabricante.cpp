@@ -59,12 +59,13 @@ void cFabricante::set_numerodehab(unsigned int num)
 string cFabricante::tostring()
 {
 
-	string resul = this->Nombre+""+this->Apellido+""+to_string(this->NumerodeHab);
+	string resul = this->Nombre+" "+this->Apellido+" "+to_string(this->NumerodeHab);
 	return resul;
 }
 
 void cFabricante::imprimir()
 {
+	cout << this->tostring();
 }
 
 cFabricante::~cFabricante()

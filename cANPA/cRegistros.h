@@ -28,7 +28,7 @@ public:
 	tm get_fechaestimada();
 	void set_fechaestimada(tm fe);
 
-	string to_string();
+	string tostring();
 	void imprimir();
 	~cRegistros();
 

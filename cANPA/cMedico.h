@@ -21,7 +21,7 @@ public:
 	string get_matricula();
 	void set_matricula(string matri);
 	vector <cHospital> get_hospital();
-	string to_string();
+	string tostring();
 	void imprimir();
 
 	

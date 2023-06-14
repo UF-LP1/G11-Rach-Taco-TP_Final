@@ -21,8 +21,7 @@ public:
 	vector<cPaciente*> buscarpacporpieza(cPiezaOrt* aux);
 	vector<cPaciente*> buscarpacporhosp(cHospital* aux);
 
-	string to_string();
-	void imprimir();
+	
 
 	~cANPA();
 private:

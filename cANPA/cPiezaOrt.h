@@ -25,7 +25,7 @@ public:
 	tm get_fecha();
 	void set_fecha(tm fecha);
 
-	string to_string();
+	string tostring();
 	void imprimir();
 
 	static int get_stock();

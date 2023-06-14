@@ -48,13 +48,17 @@ void cHospital::set_especialidad(espe espe)
 	this->Especialidad = espe;
 }
 
-string cHospital::to_string()
+string cHospital::tostring()
 {
-	return string();
+	string resul = this->Nombre + " " + this->Direccion + " " + to_string(this->Especialidad);
+
+
+	return resul ;
 }
 
 void cHospital::imprimir()
 {
+	cout << this->tostring();
 }
 
 cHospital::~cHospital()

@@ -60,14 +60,7 @@ vector<cPaciente*> cANPA::buscarpacporhosp(cHospital* aux) {
 	return pac;
 
 }
-string cANPA::to_string()
-{
-	return string();
-}
 
-void cANPA::imprimir()
-{
-}
 
 cANPA::~cANPA()
 {

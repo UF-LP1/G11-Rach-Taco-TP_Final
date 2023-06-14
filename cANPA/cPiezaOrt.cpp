@@ -58,11 +58,13 @@ void cPiezaOrt::set_fecha(tm fecha)
 	this->FechaFab = fecha;
 }
 
-string cPiezaOrt::to_string()
+string cPiezaOrt::tostring()
 {
-	return string();
+	string resul = this->Dimensiones + " " + to_string(this->TipodeMaterial) + " " + this->Tren + " " + to_string(this->FechaFab.tm_wday) + "/" + to_string(this->FechaFab.tm_mon) + "/" + to_string(this->FechaFab.tm_year) + " " + to_string(this->stock);
+	return resul;
 }
 
 void cPiezaOrt::imprimir()
 {
+	cout << this->tostring();
 }

@@ -12,8 +12,9 @@ public:
 	void ajusta_dim(cPaciente);
 
 	~cNoQuirurgica();
-	string to_string();
+	string tostring();
 	void imprimir();
+	unsigned int get_radio();
 
 private:
 

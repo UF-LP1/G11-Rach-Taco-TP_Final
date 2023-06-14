@@ -3,12 +3,12 @@
 #define _CORTOPEDIA_H
 #include "cHospital.h"
 using namespace std;
-
+enum espec {Pierna,Brazo,Pie};
 class cOrtopedia
 {
 public:
 	
-	cOrtopedia(string nom, string dir, vector <cPiezaOrt> piezort, string espe, vector<cHospital> conv);
+	cOrtopedia(string nom, string dir, vector <cPiezaOrt> piezort, espec espe, vector<cHospital> conv);
 
 	string get_nombre();
 	void set_nombre(string nom);
@@ -16,10 +16,10 @@ public:
 	void set_direccion(string dire);
 	vector <cPiezaOrt> get_piezas();
 	static int get_stock();
-	string get_especializacion();
-	void set_especializacion(string espe);
+	espec get_especializacion();
+	void set_especializacion(espec espe);
 	vector <cHospital> get_convenio();
-	string to_string();
+	string tostring();
 	void imprimir();
 
 	friend ostream& operator<<(ostream& out, const cOrtopedia& ort);
@@ -31,7 +31,7 @@ private:
 	string Direccion;
 	vector<cPiezaOrt> PiezasOrt;
 	static int stock;
-	string especializacion;
+	espec especializacion;
 	vector<cHospital> convenio;
 
 };

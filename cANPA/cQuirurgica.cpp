@@ -12,13 +12,16 @@ bool cQuirurgica::chequearAlergia(cPaciente aux)
 	return alerg;
 }
 
-string cQuirurgica::to_string()
+string cQuirurgica::tostring()
 {
-	return string();
+	string resul = this->get_dimensiones() + " " + to_string(this->get_tipo()) + " " + this->get_tren() + " " + to_string(this->get_fecha().tm_wday) + "/" + to_string(this->get_fecha().tm_mon) + "/" + to_string(this->get_fecha().tm_year) ;
+	return resul;
 }
 
 void cQuirurgica::imprimir()
 {
+	cout << this->tostring();
+
 }
 
 cQuirurgica::~cQuirurgica()

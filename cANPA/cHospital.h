@@ -25,7 +25,7 @@ public:
 	espe get_especialidad();
 	void set_especialidad( espe aux);
 	friend ostream& operator<<(ostream& out, const cHospital& aux);
-	string to_string();
+	string tostring();
 	void imprimir();
 	
 	

@@ -14,7 +14,7 @@ public:
 	cQuirurgica(string dim, tipomat tipo, string train, tm fecha, cFabricante* fab);
 
 	bool chequearAlergia(cPaciente);
-	string to_string();
+	string tostring();
 	void imprimir();
 	~cQuirurgica();
 
