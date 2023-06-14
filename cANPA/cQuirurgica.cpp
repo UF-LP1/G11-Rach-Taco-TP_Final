@@ -1,12 +1,15 @@
 #include "cQuirurgica.h"
 
-cQuirurgica::cQuirurgica()
+cQuirurgica::cQuirurgica(string dim, tipomat tipo, string train, tm fecha, cFabricante* fab):cPiezaOrt( dim,  tipo,  train,  fecha,  fab)
 {
 }
 
-bool cQuirurgica::chequearAlergia(cPaciente)
+bool cQuirurgica::chequearAlergia(cPaciente aux)
 {
-	return false;
+	bool alerg;
+//esperar al get
+
+	return alerg;
 }
 
 cQuirurgica::~cQuirurgica()

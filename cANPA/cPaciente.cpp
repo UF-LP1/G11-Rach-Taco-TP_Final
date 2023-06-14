@@ -1,6 +1,6 @@
 #include "cPaciente.h"
 
-cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel, vector<cHospital> hos, aler, unsigned int radamp, vector<cPiezaOrt> pieznec)
+cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel, vector<cHospital> hos, alergia aux, unsigned int radamp, vector<cPiezaOrt> pieznec)
 {
 	this->Nombre = nom;
 	this->Apellido = ape;
@@ -8,6 +8,17 @@ cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel
 	this->Telefono = tel;
 	this->RadioAmp = radamp;
 	this->FechaNacimiento = fechanac;
+	this->Alergias = aux;
+}
+
+alergia cPaciente::get_alergias()
+{
+	return this->Alergias;
+}
+
+void cPaciente::set_alergias(alergia aux)
+{
+	this->Alergias = aux;
 }
 
 unsigned int cPaciente::get_RadioAmp()

@@ -19,7 +19,7 @@ public:
 
 	cHospital* get_hospi();
 	cMedico* get_med();
-	cPiezaOrt* get_peiza();
+	cPiezaOrt* get_pieza();
 	cPaciente* get_pac();
 	tm get_fechasoli();
 	void set_fechasoli(tm fe);
@@ -28,7 +28,8 @@ public:
 	tm get_fechaestimada();
 	void set_fechaestimada(tm fe);
 
-
+	string to_string();
+	void imprimir();
 	~cRegistros();
 
 

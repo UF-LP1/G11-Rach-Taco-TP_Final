@@ -19,6 +19,8 @@ public:
 	void set_apellido(string ape);
 	unsigned int get_numerodehab();
 	void set_numerodehab(unsigned int num);
+	string to_string();
+	void imprimir();
 
 	~cFabricante();
 private:

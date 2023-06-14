@@ -7,10 +7,10 @@
 class cPaciente
 {
 public:
-
-	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,vector<cHospital> hos, enum aler, unsigned int radamp,vector<cPiezaOrt> pieznec );
-	// get_alergias
-	//void set_alergias
+	typedef enum  {Titanio,Plastico,Polimero,Acero}alergia;
+	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,vector<cHospital> hos, alergia Aux, unsigned int radamp,vector<cPiezaOrt> pieznec );
+	alergia get_alergias();
+	void set_alergias(alergia aux);
 	unsigned int get_RadioAmp();
 	void set_RadioAmp(unsigned int);
 	void ir_ortopedia();
@@ -29,7 +29,8 @@ public:
 		cHospital* get_hospital();
 		
 		vector <cPiezaOrt> get_protesis();
-	
+		string to_string();
+		void imprimir();
 	~cPaciente();
 
 private:
@@ -39,7 +40,7 @@ private:
 	string Documento;
 	string Telefono;
  cHospital* hospital;
-	enum alergias;
+	alergia Alergias;
 	unsigned int RadioAmp;
 	vector<cPiezaOrt> ProtesisNecesaria;
 

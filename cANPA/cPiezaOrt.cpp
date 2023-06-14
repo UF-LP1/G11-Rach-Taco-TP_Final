@@ -1,6 +1,6 @@
 #include "cPiezaOrt.h"
 
-cPiezaOrt::cPiezaOrt(string dim, string tipo, string train, tm fecha, cFabricante* fab)
+cPiezaOrt::cPiezaOrt(string dim, tipomat tipo, string train, tm fecha, cFabricante* fab)
 {
 	this->Dimensiones = dim;
 	this->TipodeMaterial = tipo;
@@ -22,12 +22,12 @@ void cPiezaOrt::set_dimensiones(string dim)
 	this->Dimensiones = dim;
 }
 
-string cPiezaOrt::get_tipo()
+tipomat cPiezaOrt::get_tipo()
 {
 	return this->TipodeMaterial;
 }
 
-void cPiezaOrt::set_tipo(string tipo)
+void cPiezaOrt::set_tipo(tipomat tipo)
 {
 	this->TipodeMaterial = tipo;
 }

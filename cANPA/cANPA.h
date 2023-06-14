@@ -18,6 +18,11 @@ public:
 
 	vector<cOrtopedia> get_ort();
 
+	vector<cPaciente*> buscarpac(cPiezaOrt* aux);
+
+	string to_string();
+	void imprimir();
+
 	~cANPA();
 private:
 

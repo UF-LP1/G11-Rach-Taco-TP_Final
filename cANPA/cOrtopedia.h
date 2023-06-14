@@ -19,6 +19,8 @@ public:
 	string get_especializacion();
 	void set_especializacion(string espe);
 	vector <cHospital> get_convenio();
+	string to_string();
+	void imprimir();
 
 	friend ostream& operator<<(ostream& out, const cOrtopedia& ort);
 

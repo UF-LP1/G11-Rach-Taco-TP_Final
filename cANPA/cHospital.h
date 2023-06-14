@@ -23,6 +23,8 @@ public:
 	string get_especialidad();
 	void set_especialidad(string espe);
 	friend ostream& operator<<(ostream& out, const cHospital aux);
+	string to_string();
+	void imprimir();
 	
 	
 	~cHospital();

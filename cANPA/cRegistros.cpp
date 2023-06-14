@@ -28,7 +28,7 @@ cMedico* cRegistros::get_med()
 	return this->medico;
 }
 
-cPiezaOrt* cRegistros::get_peiza()
+cPiezaOrt* cRegistros::get_pieza()
 {
 	return this->piezaort;
 }
