@@ -1,6 +1,6 @@
 #include "cHospital.h"
 
-cHospital::cHospital(string name, string dire, vector<cMedico> medicos, vector<cPaciente> pacientes, string especialidad)//no estoy seguro como hacer con vector
+cHospital::cHospital(string name, string dire, vector<cMedico> medicos, vector<cPaciente> pacientes, espe especialidad)//no estoy seguro como hacer con vector
 {
 	this->Nombre = name;
 	this->Direccion = dire;
@@ -38,14 +38,23 @@ vector<cPaciente> cHospital::get_pacientes()
 	return this->Pacientes;
 }
 
-string cHospital::get_especialidad()
+espe cHospital::get_especialidad()
 {
 	return this->Especialidad;
 }
 
-void cHospital::set_especialidad(string espe)
+void cHospital::set_especialidad(espe espe)
 {
 	this->Especialidad = espe;
+}
+
+string cHospital::to_string()
+{
+	return string();
+}
+
+void cHospital::imprimir()
+{
 }
 
 cHospital::~cHospital()

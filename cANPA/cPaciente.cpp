@@ -1,6 +1,6 @@
 #include "cPaciente.h"
 
-cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel, vector<cHospital> hos, alergia aux, unsigned int radamp, vector<cPiezaOrt> pieznec)
+cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel, vector<cHospital> hos, alergia aux, unsigned int radamp, vector<cPiezaOrt> pieznec,bool prot)
 {
 	this->Nombre = nom;
 	this->Apellido = ape;
@@ -9,9 +9,10 @@ cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel
 	this->RadioAmp = radamp;
 	this->FechaNacimiento = fechanac;
 	this->Alergias = aux;
+	this->protesis = prot;
 }
 
-alergia cPaciente::get_alergias()
+int cPaciente::get_alergias()
 {
 	return this->Alergias;
 }
@@ -101,6 +102,15 @@ cHospital* cPaciente::get_hospital()
 vector<cPiezaOrt> cPaciente::get_protesis()
 {
 	return this->ProtesisNecesaria;
+}
+
+string cPaciente::to_string()
+{
+	return string();
+}
+
+void cPaciente::imprimir()
+{
 }
 
 cPaciente::~cPaciente()

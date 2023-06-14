@@ -51,3 +51,12 @@ void cPiezaOrt::set_fecha(tm fecha)
 {
 	this->FechaFab = fecha;
 }
+
+string cPiezaOrt::to_string()
+{
+	return string();
+}
+
+void cPiezaOrt::imprimir()
+{
+}

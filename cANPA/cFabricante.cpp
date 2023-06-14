@@ -56,6 +56,15 @@ void cFabricante::set_numerodehab(unsigned int num)
 	this->NumerodeHab = num;
 }
 
+string cFabricante::to_string()
+{
+	return string();
+}
+
+void cFabricante::imprimir()
+{
+}
+
 cFabricante::~cFabricante()
 {
 

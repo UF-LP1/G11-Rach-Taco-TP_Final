@@ -58,6 +58,15 @@ vector<cHospital> cOrtopedia::get_convenio()
 	return this->convenio;
 }
 
+string cOrtopedia::to_string()
+{
+	return string();
+}
+
+void cOrtopedia::imprimir()
+{
+}
+
 cOrtopedia::~cOrtopedia()
 {
 

@@ -68,6 +68,15 @@ void cRegistros::set_fechaestimada(tm fe)
 	this->FechaEstimadaEntrega = fe;
 }
 
+string cRegistros::to_string()
+{
+	return string();
+}
+
+void cRegistros::imprimir()
+{
+}
+
 cRegistros::~cRegistros()
 {
 }

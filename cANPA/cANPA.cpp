@@ -32,7 +32,7 @@ vector<cOrtopedia> cANPA::get_ort()
 	return this->Ortopedias;
 }
 
-vector<cPaciente*> cANPA::buscarpac(cPiezaOrt* aux)
+vector<cPaciente*> cANPA::buscarpacporpieza(cPiezaOrt* aux)
 {
 	vector<cPaciente*> lista;
 	vector<cRegistros> reg=this->get_registros();
@@ -47,6 +47,26 @@ vector<cPaciente*> cANPA::buscarpac(cPiezaOrt* aux)
 
 
 	return lista;
+}
+vector<cPaciente*> cANPA::buscarpacporhosp(cHospital* aux) {
+	vector<cPaciente*> pac;
+	vector<cRegistros> reg = this->get_registros();
+	int i = 0;
+	for (i = 0; i < reg.size(); i++) {
+		if (reg[i].get_hospi() == aux)
+			pac.push_back(reg[i].get_pac());
+	}
+
+	return pac;
+
+}
+string cANPA::to_string()
+{
+	return string();
+}
+
+void cANPA::imprimir()
+{
 }
 
 cANPA::~cANPA()

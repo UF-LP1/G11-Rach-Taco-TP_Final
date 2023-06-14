@@ -12,6 +12,15 @@ bool cQuirurgica::chequearAlergia(cPaciente aux)
 	return alerg;
 }
 
+string cQuirurgica::to_string()
+{
+	return string();
+}
+
+void cQuirurgica::imprimir()
+{
+}
+
 cQuirurgica::~cQuirurgica()
 {
 }

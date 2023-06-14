@@ -16,3 +16,12 @@ void cNoQuirurgica::ajusta_dim(cPaciente aux)
 cNoQuirurgica::~cNoQuirurgica()
 {
 }
+
+string cNoQuirurgica::to_string()
+{
+	return string();
+}
+
+void cNoQuirurgica::imprimir()
+{
+}

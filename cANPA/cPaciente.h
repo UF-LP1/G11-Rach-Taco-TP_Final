@@ -8,8 +8,8 @@ class cPaciente
 {
 public:
 	typedef enum  {Titanio,Plastico,Polimero,Acero}alergia;
-	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,vector<cHospital> hos, alergia Aux, unsigned int radamp,vector<cPiezaOrt> pieznec );
-	alergia get_alergias();
+	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,vector<cHospital> hos, alergia Aux, unsigned int radamp,vector<cPiezaOrt> pieznec,bool protesis );
+	int get_alergias();
 	void set_alergias(alergia aux);
 	unsigned int get_RadioAmp();
 	void set_RadioAmp(unsigned int);
@@ -43,6 +43,7 @@ private:
 	alergia Alergias;
 	unsigned int RadioAmp;
 	vector<cPiezaOrt> ProtesisNecesaria;
+	bool protesis;
 
 
 };

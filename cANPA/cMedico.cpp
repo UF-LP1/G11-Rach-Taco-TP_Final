@@ -54,6 +54,15 @@ vector<cHospital> cMedico::get_hospital()
 	return this->Hospitales;
 }
 
+string cMedico::to_string()
+{
+	return string();
+}
+
+void cMedico::imprimir()
+{
+}
+
 cMedico::~cMedico()
 {
 
