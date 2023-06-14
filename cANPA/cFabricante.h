@@ -3,6 +3,8 @@
 #define _CFABRICANTE_H
 #include <string>
 #include "cPiezaOrt.h"
+#include <iostream>
+using namespace std;
 
 class cFabricante
 {
@@ -19,7 +21,7 @@ public:
 	void set_apellido(string ape);
 	unsigned int get_numerodehab();
 	void set_numerodehab(unsigned int num);
-	string to_string();
+	string tostring();
 	void imprimir();
 
 	~cFabricante();

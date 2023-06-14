@@ -23,6 +23,9 @@ public:
 	vector <cHospital> get_hospital();
 	string to_string();
 	void imprimir();
+
+	
+
 	~cMedico();
 
 

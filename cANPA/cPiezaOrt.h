@@ -8,12 +8,12 @@
 
 
 using namespace std;
+enum tipomat { Titanio, Acero, Polimero, Plastico };
 
 class cPiezaOrt
 {
 public:
 
-	typedef enum  { Titanio, Acero, Polimero,Plastico }tipomat;
 	cPiezaOrt(string dim, tipomat tipo,string train,tm fecha,cFabricante* fab);
 
 	string get_dimensiones();
@@ -28,14 +28,15 @@ public:
 	string to_string();
 	void imprimir();
 
-
+	static int get_stock();
 	~cPiezaOrt();
 private:
 	string Dimensiones;
-	tipomat TipodeMaterial; //capaz enum
+	tipomat TipodeMaterial; 
 	string Tren;
 	tm FechaFab;
 	cFabricante* fabr;
+	static int stock;
 
 };
 

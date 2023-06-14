@@ -3,13 +3,13 @@
 #define _CPACIENTE_H
 #include <vector>
 #include "cANPA.h"
-
+enum alergia { Titanio, Plastico, Polimero, Acero };
 class cPaciente
 {
 public:
-	typedef enum  {Titanio,Plastico,Polimero,Acero}alergia;
+	
 	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,vector<cHospital> hos, alergia Aux, unsigned int radamp,vector<cPiezaOrt> pieznec,bool protesis );
-	int get_alergias();
+	alergia get_alergias();
 	void set_alergias(alergia aux);
 	unsigned int get_RadioAmp();
 	void set_RadioAmp(unsigned int);

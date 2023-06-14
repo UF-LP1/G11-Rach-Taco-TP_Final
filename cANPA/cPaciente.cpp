@@ -12,7 +12,7 @@ cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel
 	this->protesis = prot;
 }
 
-int cPaciente::get_alergias()
+alergia cPaciente::get_alergias()
 {
 	return this->Alergias;
 }

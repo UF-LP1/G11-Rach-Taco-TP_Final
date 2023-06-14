@@ -8,11 +8,12 @@
 #include "cMedico.h"
 
 using namespace std;
+enum espe { Cardiologo, Neurologo, Traumatologo, Pediatra };
 class cHospital
 {
 public:
 
-	enum espe {Cardiologo,Neurologo,Traumatologo,Pediatra};
+	
 
 	cHospital(string name, string dire, vector <cMedico> medicos, vector <cPaciente> pacientes, espe especialidad);
 	string get_nombre();
@@ -23,7 +24,7 @@ public:
 	vector <cPaciente> get_pacientes();
 	espe get_especialidad();
 	void set_especialidad( espe aux);
-	friend ostream& operator<<(ostream& out, const cHospital aux);
+	friend ostream& operator<<(ostream& out, const cHospital& aux);
 	string to_string();
 	void imprimir();
 	

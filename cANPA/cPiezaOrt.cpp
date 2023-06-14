@@ -1,15 +1,21 @@
 #include "cPiezaOrt.h"
-
+static int stock = 0;
 cPiezaOrt::cPiezaOrt(string dim, tipomat tipo, string train, tm fecha, cFabricante* fab)
 {
 	this->Dimensiones = dim;
 	this->TipodeMaterial = tipo;
 	this->Tren = train;
+	stock++;
+}
 
+int cPiezaOrt::get_stock()
+{
+	return stock;
 }
 
 cPiezaOrt::~cPiezaOrt()
 {
+	stock--;
 }
 
 string cPiezaOrt::get_dimensiones()

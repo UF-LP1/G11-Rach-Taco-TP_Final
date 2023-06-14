@@ -62,7 +62,7 @@ cHospital::~cHospital()
 
 }
 
-ostream& operator<<(ostream& out, const cHospital aux)
+ostream& operator<<(ostream& out, const cHospital& aux)
 {
 	int i = 0;
 
