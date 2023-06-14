@@ -9,7 +9,7 @@ using namespace std;
 class cMedico
 {
 public:
-	cMedico(string name,string ape, string matri, vector <cHospital> hospitales);
+	cMedico(string name,string ape, string matri);
 
 	void entregarsolicitud();
 	void solicitarprotesis();
@@ -20,7 +20,6 @@ public:
 	void set_apellido(string ape);
 	string get_matricula();
 	void set_matricula(string matri);
-	vector <cHospital> get_hospital();
 	string tostring();
 	void imprimir();
 
@@ -37,7 +36,7 @@ private:
 	string Nombre;
 	string Apellido;
 	string Matricula;
-	vector <cHospital> Hospitales;
+	
 };
 
 #endif

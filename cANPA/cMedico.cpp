@@ -1,6 +1,6 @@
 #include "cMedico.h"
 
-cMedico::cMedico(string name, string ape, string matri, vector<cHospital> hospitales)
+cMedico::cMedico(string name, string ape, string matri)
 {
 	this->Nombre = name;
 	this->Apellido = ape;
@@ -49,10 +49,7 @@ void cMedico::set_matricula(string matri)
 	this->Matricula = matri;
 }
 
-vector<cHospital> cMedico::get_hospital()
-{
-	return this->Hospitales;
-}
+
 
 string cMedico::tostring()
 {

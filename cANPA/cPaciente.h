@@ -3,12 +3,12 @@
 #define _CPACIENTE_H
 #include <vector>
 #include "cANPA.h"
-enum alergia { Titanio, Plastico, Polimero, Acero };
+enum alergia { No, Titanio, Acero, Polimero, Plastico };
 class cPaciente
 {
 public:
 	
-	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,vector<cHospital> hos, alergia Aux, unsigned int radamp,vector<cPiezaOrt> pieznec,bool protesis );
+	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,vector<cHospital> hos, alergia Aux, unsigned int radamp,cPiezaOrt* pieznec,bool protesis );
 	alergia get_alergias();
 	void set_alergias(alergia aux);
 	unsigned int get_RadioAmp();
@@ -28,7 +28,10 @@ public:
 	void set_telefono(string tele);
 		cHospital* get_hospital();
 		
-		vector <cPiezaOrt> get_protesis();
+		cPiezaOrt* get_protesisnec();
+
+		bool get_protesis();
+		void set_protesis(bool aux);
 		string tostring();
 		void imprimir();
 	~cPaciente();
@@ -42,7 +45,7 @@ private:
  cHospital* hospital;
 	alergia Alergias;
 	unsigned int RadioAmp;
-	vector<cPiezaOrt> ProtesisNecesaria;
+ cPiezaOrt* ProtesisNecesaria;
 	bool protesis;
 
 

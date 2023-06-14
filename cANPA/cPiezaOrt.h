@@ -8,7 +8,7 @@
 
 
 using namespace std;
-enum tipomat { Titanio, Acero, Polimero, Plastico };
+enum tipomat { Titanio=1, Acero, Polimero, Plastico };
 
 class cPiezaOrt
 {

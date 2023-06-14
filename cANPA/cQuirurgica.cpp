@@ -6,8 +6,9 @@ cQuirurgica::cQuirurgica(string dim, tipomat tipo, string train, tm fecha, cFabr
 
 bool cQuirurgica::chequearAlergia(cPaciente aux)
 {
-	bool alerg;
-//esperar al get
+	bool alerg=true;
+	if (aux.get_alergias() == this->get_tipo())
+		return false;
 
 	return alerg;
 }

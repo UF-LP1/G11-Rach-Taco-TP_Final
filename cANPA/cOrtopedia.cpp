@@ -82,12 +82,20 @@ ostream& operator<<(ostream& out, const cOrtopedia& ort)
 {
 int	i = 0;
 vector<cPiezaOrt> aux = ort.PiezasOrt;
+vector<cHospital> aux2 = ort.convenio;
 for (i = 0; i < aux.size(); i++) {
 
 	out << aux[i].get_dimensiones() << endl;
 	out << aux[i].get_fecha().tm_year << aux[i].get_fecha().tm_mon<< aux[i].get_fecha().tm_wday<<endl;
 	out << aux[i].get_tipo() << endl;
 	out << aux[i].get_tren() << endl;
+	out << aux[i].get_stock();
+}
+for(i=0;i<aux2.size();i++){
+	out << aux2[i].get_nombre() << endl;
+	out << aux2[i].get_direccion() << endl;
+	out << aux2[i].get_especialidad() << endl;
+
 }
 
 	return out;

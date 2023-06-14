@@ -71,6 +71,7 @@ ostream& operator<<(ostream& out, const cHospital& aux)
 	int i = 0;
 
 	vector <cPaciente> aux2 = aux.Pacientes;
+	vector<cMedico> aux3 = aux.Medicos;
 
 	for (i = 0; i < aux2.size(); i++) {
 
@@ -79,11 +80,18 @@ ostream& operator<<(ostream& out, const cHospital& aux)
 		out << aux2[i].get_nombre() << endl;
 		out << aux2[i].get_apellido() << endl;
 		out << aux2[i].get_documento() << endl;
-		out << aux2[i].get_fecha().tm_year << endl << aux2[i].get_fecha().tm_mon << endl << aux2[i].get_fecha().tm_wday << endl;
-		out << aux3->Nombre << endl;
+		out << aux2[i].get_fecha().tm_year << "/" << aux2[i].get_fecha().tm_mon << "/" << aux2[i].get_fecha().tm_wday << endl;
 		out << aux2[i].get_RadioAmp() << endl;
 		out << aux2[i].get_telefono() << endl;
+		out << aux2[i].get_alergias() << endl;
+		out << aux2[i].get_protesis() << endl;
 		
+	}
+	for (i = 0; i < aux3.size(); i++) {
+		out << aux3[i].get_nombre() << endl;
+		out << aux3[i].get_apellido() << endl;
+		out << aux3[i].get_matricula();
+
 	}
 		return out;
 }
