@@ -13,7 +13,7 @@ public:
 	cFabricante(string name, string ape, unsigned int num);
 	void recibirsolicitud();
 	void rechazarsolicitud();
-	void fabricarprotesis(cPiezaOrt);
+	void fabricarprotesis(cPiezaOrt*);
 
 	string get_nombre();
 	void set_nombre(string nom);

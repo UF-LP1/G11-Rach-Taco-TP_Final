@@ -20,7 +20,7 @@ void cFabricante::rechazarsolicitud()
 
 }
 
-void cFabricante::fabricarprotesis(cPiezaOrt)
+void cFabricante::fabricarprotesis(cPiezaOrt*)
 {
 
 

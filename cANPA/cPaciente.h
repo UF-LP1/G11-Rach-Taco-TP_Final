@@ -8,13 +8,13 @@ class cPaciente
 {
 public:
 	
-	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,vector<cHospital> hos, alergia Aux, unsigned int radamp,cPiezaOrt* pieznec,bool protesis );
+	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,cHospital* hos, alergia Aux, unsigned int radamp,cPiezaOrt* pieznec,bool protesis );
 	alergia get_alergias();
 	void set_alergias(alergia aux);
 	unsigned int get_RadioAmp();
 	void set_RadioAmp(unsigned int);
 	void ir_ortopedia();
-	void PedirListaOrtopedias(cOrtopedia);
+	void PedirListaOrtopedias(cOrtopedia*);
 
 	string get_nombre();
 	void set_nombre(string nom);

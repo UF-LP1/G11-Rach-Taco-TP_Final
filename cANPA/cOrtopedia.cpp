@@ -1,6 +1,6 @@
 #include "cOrtopedia.h"
-int stock = 0;
-cOrtopedia::cOrtopedia(string nom, string dir, vector<cPiezaOrt> piezort, espec espe, vector<cHospital> conv)
+static int stock = 0;
+cOrtopedia::cOrtopedia(string nom, string dir, vector<cPiezaOrt*> piezort, espec espe, vector<cHospital*> conv)
 {
 	this->Nombre = nom;
 	this->Direccion = dir;
@@ -32,7 +32,7 @@ void cOrtopedia::set_direccion(string dire)
 
 }
 
-vector<cPiezaOrt> cOrtopedia::get_piezas()
+vector<cPiezaOrt*> cOrtopedia::get_piezas()
 {
 	return this->PiezasOrt;
 }
@@ -53,7 +53,7 @@ void cOrtopedia::set_especializacion(espec espe)
 
 }
 
-vector<cHospital> cOrtopedia::get_convenio()
+vector<cHospital*> cOrtopedia::get_convenio()
 {
 	return this->convenio;
 }
@@ -81,20 +81,20 @@ cOrtopedia::~cOrtopedia()
 ostream& operator<<(ostream& out, const cOrtopedia& ort)
 {
 int	i = 0;
-vector<cPiezaOrt> aux = ort.PiezasOrt;
-vector<cHospital> aux2 = ort.convenio;
+vector<cPiezaOrt*> aux = ort.PiezasOrt;
+vector<cHospital*> aux2 = ort.convenio;
 for (i = 0; i < aux.size(); i++) {
 
-	out << aux[i].get_dimensiones() << endl;
-	out << aux[i].get_fecha().tm_year << aux[i].get_fecha().tm_mon<< aux[i].get_fecha().tm_wday<<endl;
-	out << aux[i].get_tipo() << endl;
-	out << aux[i].get_tren() << endl;
-	out << aux[i].get_stock();
+	out << aux[i]->get_dimensiones() << endl;
+	out << aux[i]->get_fecha().tm_year << aux[i]->get_fecha().tm_mon<< aux[i]->get_fecha().tm_wday<<endl;
+	out << aux[i]->get_tipo() << endl;
+	out << aux[i]->get_tren() << endl;
+	out << aux[i]->get_stock();
 }
 for(i=0;i<aux2.size();i++){
-	out << aux2[i].get_nombre() << endl;
-	out << aux2[i].get_direccion() << endl;
-	out << aux2[i].get_especialidad() << endl;
+	out << aux2[i]->get_nombre() << endl;
+	out << aux2[i]->get_direccion() << endl;
+	out << aux2[i]->get_especialidad() << endl;
 
 }
 

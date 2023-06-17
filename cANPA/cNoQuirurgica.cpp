@@ -6,9 +6,9 @@ cNoQuirurgica::cNoQuirurgica(string dim, tipomat tipo, string train, tm fecha, c
 
 }
 
-void cNoQuirurgica::ajusta_dim(cPaciente aux)
+void cNoQuirurgica::ajusta_dim(cPaciente* aux)
 {
-	this->radio = aux.get_RadioAmp();
+	this->radio = aux->get_RadioAmp();
 
 
 }

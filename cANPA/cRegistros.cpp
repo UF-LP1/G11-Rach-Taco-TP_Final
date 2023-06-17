@@ -4,16 +4,16 @@ cRegistros::cRegistros(cHospital* hos,cMedico* med, cPiezaOrt* pie, cPaciente* p
 {
 }
 
-void cRegistros::buscarPaciente(cPaciente)
+void cRegistros::buscarPaciente(cPaciente*)
 {
 }
 
-string cRegistros::imprimirPaciente(cPaciente)
+string cRegistros::imprimirPaciente(cPaciente*)
 {
 	return string();
 }
 
-string cRegistros::imprimirProtesis(cPaciente)
+string cRegistros::imprimirProtesis(cPaciente*)
 {
 	return string();
 }

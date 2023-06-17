@@ -1,6 +1,6 @@
 #include "cHospital.h"
 
-cHospital::cHospital(string name, string dire, vector<cMedico> medicos, vector<cPaciente> pacientes, espe especialidad)//no estoy seguro como hacer con vector
+cHospital::cHospital(string name, string dire, vector<cMedico*> medicos, vector<cPaciente*> pacientes, espe especialidad)//no estoy seguro como hacer con vector
 {
 	this->Nombre = name;
 	this->Direccion = dire;
@@ -28,12 +28,12 @@ void cHospital::set_direccion(string dire)
 	this->Direccion = dire;
 }
 
-vector<cMedico> cHospital::get_medicos()
+vector<cMedico*> cHospital::get_medicos()
 {
 	return this->Medicos;
 }
 
-vector<cPaciente> cHospital::get_pacientes()
+vector<cPaciente*> cHospital::get_pacientes()
 {
 	return this->Pacientes;
 }
@@ -70,27 +70,27 @@ ostream& operator<<(ostream& out, const cHospital& aux)
 {
 	int i = 0;
 
-	vector <cPaciente> aux2 = aux.Pacientes;
-	vector<cMedico> aux3 = aux.Medicos;
+	vector <cPaciente*> aux2 = aux.Pacientes;
+	vector<cMedico*> aux3 = aux.Medicos;
 
 	for (i = 0; i < aux2.size(); i++) {
 
-		cHospital* aux3 = aux2[i].get_hospital();
+		cHospital* aux3 = aux2[i]->get_hospital();
 
-		out << aux2[i].get_nombre() << endl;
-		out << aux2[i].get_apellido() << endl;
-		out << aux2[i].get_documento() << endl;
-		out << aux2[i].get_fecha().tm_year << "/" << aux2[i].get_fecha().tm_mon << "/" << aux2[i].get_fecha().tm_wday << endl;
-		out << aux2[i].get_RadioAmp() << endl;
-		out << aux2[i].get_telefono() << endl;
-		out << aux2[i].get_alergias() << endl;
-		out << aux2[i].get_protesis() << endl;
+		out << aux2[i]->get_nombre() << endl;
+		out << aux2[i]->get_apellido() << endl;
+		out << aux2[i]->get_documento() << endl;
+		out << aux2[i]->get_fecha().tm_year << "/" << aux2[i]->get_fecha().tm_mon << "/" << aux2[i]->get_fecha().tm_wday << endl;
+		out << aux2[i]->get_RadioAmp() << endl;
+		out << aux2[i]->get_telefono() << endl;
+		out << aux2[i]->get_alergias() << endl;
+		out << aux2[i]->get_protesis() << endl;
 		
 	}
 	for (i = 0; i < aux3.size(); i++) {
-		out << aux3[i].get_nombre() << endl;
-		out << aux3[i].get_apellido() << endl;
-		out << aux3[i].get_matricula();
+		out << aux3[i]->get_nombre() << endl;
+		out << aux3[i]->get_apellido() << endl;
+		out << aux3[i]->get_matricula();
 
 	}
 		return out;

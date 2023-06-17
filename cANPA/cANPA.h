@@ -9,14 +9,14 @@ using namespace std;
 class cANPA
 {
 public:
-	cANPA(vector<cRegistros> reg, vector <cOrtopedia> ortopedia);
-	bool chequeoalergias(cPaciente);
-	bool busquedapieza(cPiezaOrt);
+	cANPA(vector<cRegistros*> reg, vector <cOrtopedia*> ortopedia);
+	bool chequeoalergias(cPaciente*);
+	bool busquedapieza(cPiezaOrt*);
 	void mandar_sol();
 	friend ostream& operator<<(ostream& out, const cANPA& Aux);
-	vector<cRegistros> get_registros();
+	vector<cRegistros*> get_registros();
 
-	vector<cOrtopedia> get_ort();
+	vector<cOrtopedia*> get_ort();
 
 	vector<cPaciente*> buscarpacporpieza(cPiezaOrt* aux);
 	vector<cPaciente*> buscarpacporhosp(cHospital* aux);
@@ -26,9 +26,9 @@ public:
 	~cANPA();
 private:
 
-	vector <cRegistros> registros;
+	vector <cRegistros*> registros;
 	
-	vector<cOrtopedia> Ortopedias;
+	vector<cOrtopedia*> Ortopedias;
 
 };
 
