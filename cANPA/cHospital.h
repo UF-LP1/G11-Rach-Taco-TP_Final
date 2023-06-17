@@ -6,6 +6,8 @@
 #include <string>
 #include "cPaciente.h"
 #include "cMedico.h"
+#include "Medrepetido.h"
+#include "MedNoExiste.h"
 
 using namespace std;
 enum espe { Cardiologo, Neurologo, Traumatologo, Pediatra };
@@ -29,7 +31,7 @@ public:
 	void imprimir();
 	void operator+(cMedico* aux);
 	void operator-(cMedico* aux);
-	bool operator=(string matri);
+	int operator=(string matri);
 	
 	
 	~cHospital();

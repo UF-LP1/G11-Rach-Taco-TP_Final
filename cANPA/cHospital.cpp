@@ -63,28 +63,38 @@ void cHospital::imprimir()
 
 void cHospital::operator+(cMedico* aux)
 {
-	if (this->operator=(aux->get_matricula()) == false)
+	int i = this->operator=(aux->get_matricula());
+	if (i != -1)
+		throw new Medrepetido();
+	else
 		this->Medicos.push_back(aux);
+	return;
 
 }
 
 void cHospital::operator-(cMedico* aux) //falta completar
 {
-	if (this->operator=(aux->get_matricula()) == true)
-		return;
+	int i = this->operator=(aux->get_matricula());
+	if (i != -1)
+		throw new MedNoExiste();
+	else
+		this->Medicos.erase(this->Medicos.begin() + i);
+	return;
 
 }
 
-bool cHospital::operator=(string matri)
+int cHospital::operator=(string matri)
 {
-	int i = 0;
+	int i=0,k = 0;
 	bool esta = false;
 	vector<cMedico*> aux = this->Medicos;
 	while (esta == false) {
-		if (aux[i]->get_matricula() == matri)
+		if (aux[i]->get_matricula() == matri) {
 			esta = true;
+			k = i;
+		}
 	}
-	return esta;
+	return k;
 
 }
 

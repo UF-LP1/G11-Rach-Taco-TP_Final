@@ -45,6 +45,12 @@
     <ClInclude Include="cRegistros.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Medrepetido.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="MedNoExiste.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cANPA.cpp">
@@ -78,6 +84,12 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Medrepetido.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="MedNoExiste.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
