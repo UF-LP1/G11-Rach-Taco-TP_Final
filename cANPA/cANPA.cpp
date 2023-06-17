@@ -39,7 +39,7 @@ vector<cPaciente*> cANPA::buscarpacporpieza(cPiezaOrt* aux) //anyadir numero de 
 
 	int i = 0;
 	for (i = 0; i < reg.size(); i++) {
-		if (reg[i]->get_pieza() == aux)
+		if (reg[i]->get_pieza()->get_num() == aux->get_num())
 			lista.push_back(reg[i]->get_pac());
 
  }
@@ -66,7 +66,9 @@ cANPA::~cANPA()
 {
 
 }
+void cANPA::contactarfabri() {
 
+}
 ostream& operator<<(ostream& out, const cANPA& Aux)
 {
 	int i = 0;

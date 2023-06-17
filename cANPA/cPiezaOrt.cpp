@@ -1,16 +1,23 @@
 #include "cPiezaOrt.h"
 static int stock = 0;
-cPiezaOrt::cPiezaOrt(string dim, tipomat tipo, string train, tm fecha, cFabricante* fab)
+cPiezaOrt::cPiezaOrt(string dim, tipomat tipo, tren train, tm fecha, cFabricante* fab,const string series):numdeserie(series)
 {
 	this->Dimensiones = dim;
 	this->TipodeMaterial = tipo;
 	this->Tren = train;
+	this->FechaFab = fecha;
+	this->Fabricante = fab;
 	stock++;
 }
 
 int cPiezaOrt::get_stock()
 {
 	return stock;
+}
+
+const string cPiezaOrt::get_num()
+{
+	return this->numdeserie;
 }
 
 cPiezaOrt::~cPiezaOrt()
@@ -38,12 +45,12 @@ void cPiezaOrt::set_tipo(tipomat tipo)
 	this->TipodeMaterial = tipo;
 }
 
-string cPiezaOrt::get_tren()
+tren cPiezaOrt::get_tren()
 {
 	return this->Tren;
 }
 
-void cPiezaOrt::set_tren(string train)
+void cPiezaOrt::set_tren(tren train)
 {
 	this->Tren = train;
 }
@@ -58,9 +65,10 @@ void cPiezaOrt::set_fecha(tm fecha)
 	this->FechaFab = fecha;
 }
 
+
 string cPiezaOrt::tostring()
 {
-	string resul = this->Dimensiones + " " + to_string(this->TipodeMaterial) + " " + this->Tren + " " + to_string(this->FechaFab.tm_wday) + "/" + to_string(this->FechaFab.tm_mon) + "/" + to_string(this->FechaFab.tm_year) + " " + to_string(this->stock);
+	string resul = this->Dimensiones + " " + to_string(this->TipodeMaterial) + " " + to_string(this->Tren) + " " + to_string(this->FechaFab.tm_wday) + "/" + to_string(this->FechaFab.tm_mon) + "/" + to_string(this->FechaFab.tm_year) + " " + to_string(this->stock)+" "+this->numdeserie;
 	return resul;
 }
 

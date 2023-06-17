@@ -61,6 +61,33 @@ void cHospital::imprimir()
 	cout << this->tostring();
 }
 
+void cHospital::operator+(cMedico* aux)
+{
+	if (this->operator=(aux->get_matricula()) == false)
+		this->Medicos.push_back(aux);
+
+}
+
+void cHospital::operator-(cMedico* aux) //falta completar
+{
+	if (this->operator=(aux->get_matricula()) == true)
+		return;
+
+}
+
+bool cHospital::operator=(string matri)
+{
+	int i = 0;
+	bool esta = false;
+	vector<cMedico*> aux = this->Medicos;
+	while (esta == false) {
+		if (aux[i]->get_matricula() == matri)
+			esta = true;
+	}
+	return esta;
+
+}
+
 cHospital::~cHospital()
 {
 

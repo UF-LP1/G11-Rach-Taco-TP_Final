@@ -13,6 +13,7 @@ public:
 	bool chequeoalergias(cPaciente*);
 	bool busquedapieza(cPiezaOrt*);
 	void mandar_sol();
+	void contactarfabri();
 	friend ostream& operator<<(ostream& out, const cANPA& Aux);
 	vector<cRegistros*> get_registros();
 

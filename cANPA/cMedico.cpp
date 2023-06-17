@@ -1,10 +1,10 @@
 #include "cMedico.h"
 
-cMedico::cMedico(string name, string ape, string matri)
+cMedico::cMedico(string name, string ape, string matri):Matricula(matri)
 {
 	this->Nombre = name;
 	this->Apellido = ape;
-	this->Matricula = matri;
+
 
 }
 
@@ -39,15 +39,11 @@ void cMedico::set_apellido(string ape)
 }
 
 
-string cMedico::get_matricula()
+const string cMedico::get_matricula()
 {
 	return this->Matricula;
 }
 
-void cMedico::set_matricula(string matri)
-{
-	this->Matricula = matri;
-}
 
 
 

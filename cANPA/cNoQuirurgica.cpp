@@ -1,6 +1,6 @@
 #include "cNoQuirurgica.h"
 
-cNoQuirurgica::cNoQuirurgica(string dim, tipomat tipo, string train, tm fecha, cFabricante* fab,unsigned int radius):cPiezaOrt(dim, tipo, train, fecha, fab)
+cNoQuirurgica::cNoQuirurgica(string dim, tipomat tipo, tren train, tm fecha, cFabricante* fab,const string series,unsigned int radius):cPiezaOrt(dim, tipo, train, fecha, fab,series)
 {
 	this->radio = radius;
 
@@ -23,9 +23,9 @@ cNoQuirurgica::~cNoQuirurgica()
 {
 }
 
-string cNoQuirurgica::tostring() //ver
+string cNoQuirurgica::tostring() 
 {
-	string resul = this->get_dimensiones() + " " + to_string(this->get_tipo()) + " " + this->get_tren() + " " + to_string(this->get_fecha().tm_wday) + "/" + to_string(this->get_fecha().tm_mon) + "/" + to_string(this->get_fecha().tm_year) + " " + to_string(this->get_radio());
+	string resul = this->get_dimensiones() + " " + to_string(this->get_tipo()) + " " + to_string(this->get_tren()) + " " + to_string(this->get_fecha().tm_wday) + "/" + to_string(this->get_fecha().tm_mon) + "/" + to_string(this->get_fecha().tm_year) + " " + to_string(this->get_radio())+" "+this->get_num();
 	return resul;
 
 }

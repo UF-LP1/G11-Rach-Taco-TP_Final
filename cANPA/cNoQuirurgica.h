@@ -7,9 +7,9 @@
 class cNoQuirurgica : public cPiezaOrt
 {
 public:
-	cNoQuirurgica(string dim, tipomat tipo, string train, tm fecha, cFabricante* fab,unsigned int radius);
+	cNoQuirurgica(string dim, tipomat tipo, tren train, tm fecha, cFabricante* fab,const string series,unsigned int radius);
 
-	void ajusta_dim(cPaciente*);
+	void ajusta_dim(cPaciente* aux);
 
 	~cNoQuirurgica();
 	string tostring();

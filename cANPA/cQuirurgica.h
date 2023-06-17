@@ -11,9 +11,9 @@ class cQuirurgica: public cPiezaOrt
 {
 public:
 
-	cQuirurgica(string dim, tipomat tipo, string train, tm fecha, cFabricante* fab);
+	cQuirurgica(string dim, tipomat tipo, tren train, tm fecha, cFabricante* fab,const string series);
 
-	bool chequearAlergia(cPaciente);
+	bool chequearAlergia(cPaciente* aux);
 	string tostring();
 	void imprimir();
 	~cQuirurgica();

@@ -27,6 +27,9 @@ public:
 	friend ostream& operator<<(ostream& out, const cHospital& aux);
 	string tostring();
 	void imprimir();
+	void operator+(cMedico* aux);
+	void operator-(cMedico* aux);
+	bool operator=(string matri);
 	
 	
 	~cHospital();

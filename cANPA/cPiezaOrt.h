@@ -9,19 +9,20 @@
 
 using namespace std;
 enum tipomat { Titanio=1, Acero, Polimero, Plastico };
+enum tren{Superior,inferior};
 
 class cPiezaOrt
 {
 public:
 
-	cPiezaOrt(string dim, tipomat tipo,string train,tm fecha,cFabricante* fab);
+	cPiezaOrt(string dim, tipomat tipo,tren train,tm fecha,cFabricante* fab,const string series);
 
 	string get_dimensiones();
 	void set_dimensiones(string dim);
 	tipomat get_tipo();
 	void set_tipo(tipomat tipo);
-	string get_tren();
-	void set_tren(string train);
+	tren get_tren();
+	void set_tren(tren train);
 	tm get_fecha();
 	void set_fecha(tm fecha);
 
@@ -29,13 +30,16 @@ public:
 	void imprimir();
 
 	static int get_stock();
+
+	const string get_num();
 	~cPiezaOrt();
 private:
 	string Dimensiones;
 	tipomat TipodeMaterial; 
-	string Tren;
+	tren Tren;
 	tm FechaFab;
-	cFabricante* fabr;
+	cFabricante* Fabricante;
+	const string numdeserie;
 	static int stock;
 
 };
