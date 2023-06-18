@@ -1,14 +1,15 @@
 #pragma once
 #ifndef _CORTOPEDIA_H
 #define _CORTOPEDIA_H
-#include "cHospital.h"
+#include "cPiezaOrt.h"
+#include <vector>
 using namespace std;
 enum espec {Pierna,Brazo,Pie};
-class cOrtopedia
+class cOrtopedia //eliminar vector de convenios y reemplazarlo por un vecto de ortopedias en cHospital
 {
 public:
 	
-	cOrtopedia(string nom, string dir, vector <cPiezaOrt*> piezort, espec espe, vector<cHospital*> conv);
+	cOrtopedia(string nom, string dir, vector <cPiezaOrt*> piezort, espec espe);
 
 	string get_nombre();
 	void set_nombre(string nom);
@@ -18,7 +19,7 @@ public:
 	static int get_stock();
 	espec get_especializacion();
 	void set_especializacion(espec espe);
-	vector <cHospital*> get_convenio();
+	
 	string tostring();
 	void imprimir();
 
@@ -32,7 +33,7 @@ private:
 	vector<cPiezaOrt*> PiezasOrt;
 	static int stock;
 	espec especializacion;
-	vector<cHospital*> convenio;
+	
 
 };
 

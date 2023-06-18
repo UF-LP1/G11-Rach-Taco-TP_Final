@@ -32,6 +32,7 @@ public:
 	static int get_stock();
 
 	const string get_num();
+	
 	~cPiezaOrt();
 private:
 	string Dimensiones;

@@ -8,6 +8,7 @@
 #include "cMedico.h"
 #include "Medrepetido.h"
 #include "MedNoExiste.h"
+#include "cOrtopedia.h"
 
 using namespace std;
 enum espe { Cardiologo, Neurologo, Traumatologo, Pediatra };
@@ -17,7 +18,7 @@ public:
 
 	
 
-	cHospital(string name, string dire, vector <cMedico*> medicos, vector <cPaciente*> pacientes, espe especialidad);
+	cHospital(string name, string dire, vector <cMedico*> medicos, vector <cPaciente*> pacientes, espe especialidad,vector<cOrtopedia*> conv);
 	string get_nombre();
 	void set_nombre(string nom);
 	string get_direccion();
@@ -43,6 +44,7 @@ private:
 	vector <cMedico*> Medicos;
 	vector <cPaciente*> Pacientes;
 	espe Especialidad;
+	vector<cOrtopedia*> convenios;
 
 };
 #endif

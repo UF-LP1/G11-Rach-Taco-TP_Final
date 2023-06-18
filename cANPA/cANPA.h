@@ -4,7 +4,6 @@
 
 #include <vector>
 #include "cRegistros.h"
-#include "cOrtopedia.h"
 using namespace std;
 class cANPA
 {

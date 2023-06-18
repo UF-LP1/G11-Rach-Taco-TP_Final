@@ -4,6 +4,12 @@
 #include <string>
 #include "cPiezaOrt.h"
 #include "cHospital.h"
+#include"cFabricante.h"
+#include "cMedico.h"
+#include "cOrtopedia.h"
+#include "cPaciente.h"
+#include "cNoQuirurgica.h"
+#include "cQuirurgica.h"
 
 
 using namespace std;

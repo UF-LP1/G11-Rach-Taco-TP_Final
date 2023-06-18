@@ -20,6 +20,8 @@ const string cPiezaOrt::get_num()
 	return this->numdeserie;
 }
 
+
+
 cPiezaOrt::~cPiezaOrt()
 {
 	stock--;

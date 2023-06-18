@@ -1,6 +1,6 @@
 #include "cHospital.h"
 
-cHospital::cHospital(string name, string dire, vector<cMedico*> medicos, vector<cPaciente*> pacientes, espe especialidad)//no estoy seguro como hacer con vector
+cHospital::cHospital(string name, string dire, vector<cMedico*> medicos, vector<cPaciente*> pacientes, espe especialidad,vector<cOrtopedia*> conv)//no estoy seguro como hacer con vector
 {
 	this->Nombre = name;
 	this->Direccion = dire;
@@ -72,7 +72,7 @@ void cHospital::operator+(cMedico* aux)
 
 }
 
-void cHospital::operator-(cMedico* aux) //falta completar
+void cHospital::operator-(cMedico* aux) 
 {
 	int i = this->operator=(aux->get_matricula());
 	if (i != -1)

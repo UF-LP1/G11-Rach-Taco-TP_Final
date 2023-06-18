@@ -32,6 +32,7 @@ public:
 
 		bool get_protesis();
 		void set_protesis(bool aux);
+		bool operator==(cPiezaOrt* aux);
 		string tostring();
 		void imprimir();
 	~cPaciente();

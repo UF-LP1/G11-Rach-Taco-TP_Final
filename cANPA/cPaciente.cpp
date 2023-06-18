@@ -115,6 +115,22 @@ void cPaciente::set_protesis(bool aux)
 	this->protesis = aux;
 }
 
+//bool cPaciente::operator==(cPiezaOrt* aux) //mi idea aca es con dynamic cast ver si es quirurgica o no para ver si la que necesita lo es o no tmb
+//{//y despues comparar sus atributos, si es el mismo return true, sino comparar numero de serie
+//	bool esigual = false;
+//	if (this->ProtesisNecesaria->get_num() == aux->get_num()) {
+//		cNoQuirurgica* noqui = dynamic_cast<cNoQuirurgica*>(aux);
+//		if (noqui != nullptr)
+//			noqui->ajusta_dim(this->RadioAmp);
+//	}
+//	
+//	
+//
+//
+//
+//	return esigual;
+//}
+
 string cPaciente::tostring()
 {
 	string resul = this->Nombre + " " + this->Apellido + " " + to_string(this->FechaNacimiento.tm_wday) + "/" + to_string(this->FechaNacimiento.tm_mon) + "/" + to_string(this->FechaNacimiento.tm_year) + " " + this->Documento + " " + this->Telefono + " " + to_string(this->Alergias) + " " + to_string(this->RadioAmp) + " " + to_string(this->protesis);
