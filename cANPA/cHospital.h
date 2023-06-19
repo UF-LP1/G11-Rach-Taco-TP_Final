@@ -11,14 +11,14 @@
 #include "cOrtopedia.h"
 
 using namespace std;
-enum espe { Cardiologo, Neurologo, Traumatologo, Pediatra };
+enum espe { Cardiologia, Neurologia, Traumatologia, Pediatria };
 class cHospital
 {
 public:
 
 	
 
-	cHospital(string name, string dire, vector <cMedico*> medicos, vector <cPaciente*> pacientes, espe especialidad,vector<cOrtopedia*> conv);
+	cHospital(string name, string dire, vector <cMedico*> medicos, vector <cPaciente*> pacientes, espe especialidad,vector<cOrtopedia*> conv,vector<cOrtopedia*> noconv);
 	string get_nombre();
 
 	void set_nombre(string nom);
@@ -49,9 +49,9 @@ public:
 
 	void buscarpieza(cPaciente* aux);
 
-	bool chequearAlergia(cPaciente* aux);
+	bool chequearAlergia(cPaciente* aux,cPiezaOrt* ort);
 
-	bool operator==(cPiezaOrt* aux);
+	
 
 	vector<cOrtopedia*> get_noconvenio();
 	

@@ -51,6 +51,7 @@ public:
 		string tostring();
 		void imprimir();
 	~cPaciente();
+	
 
 	friend class cHospital;
 

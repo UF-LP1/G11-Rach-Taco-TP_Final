@@ -1,6 +1,6 @@
 #include "cHospital.h"
 
-cHospital::cHospital(string name, string dire, vector<cMedico*> medicos, vector<cPaciente*> pacientes, espe especialidad,vector<cOrtopedia*> conv)//no estoy seguro como hacer con vector
+cHospital::cHospital(string name, string dire, vector<cMedico*> medicos, vector<cPaciente*> pacientes, espe especialidad,vector<cOrtopedia*> conv,vector <cOrtopedia*> noconv)//no estoy seguro como hacer con vector
 {
 	this->Nombre = name;
 	this->Direccion = dire;
@@ -109,7 +109,7 @@ void cHospital::buscarpieza(cPaciente* aux)
 	while (i<ort.size()) { // chequeo si el paciente tiene protesis o no
 		while (k<ort[i]->get_piezas().size()) {
 			if (ort[i]->get_piezas()[k]->get_num() == aux->get_protesisnec()->get_num()) {
-				if (ort[i]->get_piezas()[k]->get_tipo() != aux->Alergias) { //chequeo las alergias y el material
+				if (chequearAlergia(aux,ort[i]->get_piezas()[k])) { //chequeo las alergias y el material
 					this->convenios[i]->entregarpieza(aux->get_protesisnec()); //se le entrega la protesis al paciente
 					aux->set_protesis(true);
 				}
@@ -124,7 +124,7 @@ void cHospital::buscarpieza(cPaciente* aux)
 		while (i<ortnoconv.size()) {
 			while (k<ortnoconv[i]->get_piezas().size()) {
 				if (ortnoconv[i]->get_piezas()[k]->get_num() == aux->get_protesisnec()->get_num()) {
-					if (ort[i]->get_piezas()[k]->get_tipo() != aux->Alergias) {
+					if (chequearAlergia(aux,ortnoconv[i]->get_piezas()[k]) ){
 						this->noconvenio[i]->entregarpieza(aux->get_protesisnec()); //como no dice que la ortopedia puede rechazar la solicitud se la asignamos automaticamente
 						aux->set_protesis(true);
 					}

@@ -6,7 +6,6 @@
 #include "cHospital.h"
 #include"cFabricante.h"
 #include "cMedico.h"
-#include "cOrtopedia.h"
 #include "cPaciente.h"
 #include "cNoQuirurgica.h"
 #include "cQuirurgica.h"
@@ -18,10 +17,6 @@ class cRegistros
 {
 public:
 	cRegistros(cHospital* hos, cMedico* med, cPiezaOrt* pie, cPaciente* pac, tm fechasol, tm fechaentreg, tm fechaest);
-
-	void buscarPaciente(cPaciente*);
-	string imprimirPaciente(cPaciente*);
-	string imprimirProtesis(cPaciente*);
 
 	cHospital* get_hospi();
 	cMedico* get_med();

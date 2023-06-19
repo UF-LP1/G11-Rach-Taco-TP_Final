@@ -23,7 +23,7 @@ vector<cRegistros*> cANPA::get_registros()
 
 cPaciente* cANPA::buscarpacporpieza(string numdeserie) //anyadir numero de serie a la protesis y buscar con eso
 {
- cPaciente* lista;
+ cPaciente* lista=nullptr;
 	vector<cRegistros*> reg=this->get_registros();
 
 	int i = 0;
@@ -32,6 +32,8 @@ cPaciente* cANPA::buscarpacporpieza(string numdeserie) //anyadir numero de serie
 			lista=(reg[i]->get_pac());
 
  }
+	if (lista == nullptr)
+		throw new PacNoExiste();
 
 
 
@@ -45,7 +47,7 @@ vector<cPaciente*> cANPA::buscarpacporhosp(string nom) {
 		if (reg[i]->get_hospi()->get_nombre() == nom)
 			pac.push_back(reg[i]->get_pac());
 	}
-
+	
 	return pac;
 
 }

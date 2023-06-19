@@ -26,8 +26,8 @@ public:
 	tm get_fecha();
 	void set_fecha(tm fecha);
 	cFabricante* get_fab();
-	string tostring();
-	void imprimir();
+	virtual string tostring();
+	virtual void imprimir();
 
 	static int get_stock();
 

@@ -109,7 +109,6 @@ void cPaciente::set_protesis(bool aux)
 }
 
 
-
 string cPaciente::tostring()
 {
 	string resul = this->Nombre + " " + this->Apellido + " " + to_string(this->FechaNacimiento.tm_mday) + "/" + to_string(this->FechaNacimiento.tm_mon) + "/" + to_string(this->FechaNacimiento.tm_year) + " " + this->Documento + " " + this->Telefono + " " + to_string(this->Alergias) + " " + to_string(this->RadioAmp) + " " + to_string(this->protesis);
