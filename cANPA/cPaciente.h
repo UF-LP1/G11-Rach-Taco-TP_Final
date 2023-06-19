@@ -2,30 +2,45 @@
 #ifndef _CPACIENTE_H
 #define _CPACIENTE_H
 #include <vector>
-#include "cANPA.h"
+#include "cPiezaOrt.h"
+
+class cHospital;
+
 enum alergia { No, Titanio, Acero, Polimero, Plastico };
 class cPaciente
 {
 public:
 	
 	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,cHospital* hos, alergia Aux, unsigned int radamp,cPiezaOrt* pieznec,bool protesis );
+	
 	alergia get_alergias();
+
 	void set_alergias(alergia aux);
+
 	unsigned int get_RadioAmp();
+
 	void set_RadioAmp(unsigned int);
-	void ir_ortopedia();
-	void PedirListaOrtopedias(cOrtopedia*);
 
 	string get_nombre();
+
 	void set_nombre(string nom);
+
 	string get_apellido();
+
 	void set_apellido(string ape);
+
 	tm get_fecha();
+
 	void set_fecha(tm fech);
+
  string get_documento();
+
 	void set_documento(string doc);
+
 	string get_telefono();
+
 	void set_telefono(string tele);
+
 		cHospital* get_hospital();
 		
 		cPiezaOrt* get_protesisnec();
@@ -36,6 +51,8 @@ public:
 		string tostring();
 		void imprimir();
 	~cPaciente();
+
+	friend class cHospital;
 
 private:
 	string Nombre;

@@ -20,7 +20,18 @@ const string cPiezaOrt::get_num()
 	return this->numdeserie;
 }
 
+bool cPiezaOrt::operator==(cPiezaOrt* aux) {
+	bool eslamisma = false;
 
+	if (this->Dimensiones == aux->Dimensiones && this->Fabricante == aux->Fabricante && this->FechaFab.tm_mday == aux->FechaFab.tm_mday &&
+		this->FechaFab.tm_mon == aux->FechaFab.tm_mon && this->FechaFab.tm_year == aux->FechaFab.tm_year && this->numdeserie == aux->numdeserie &&
+		this->TipodeMaterial == aux->TipodeMaterial && this->Tren == aux->Tren) {
+		eslamisma = true;
+	}
+
+
+		return eslamisma;
+}
 
 cPiezaOrt::~cPiezaOrt()
 {
@@ -75,7 +86,7 @@ cFabricante* cPiezaOrt::get_fab()
 
 string cPiezaOrt::tostring()
 {
-	string resul = this->Dimensiones + " " + to_string(this->TipodeMaterial) + " " + to_string(this->Tren) + " " + to_string(this->FechaFab.tm_wday) + "/" + to_string(this->FechaFab.tm_mon) + "/" + to_string(this->FechaFab.tm_year) + " " + to_string(this->stock)+" "+this->numdeserie;
+	string resul = this->Dimensiones + " " + to_string(this->TipodeMaterial) + " " + to_string(this->Tren) + " " + to_string(this->FechaFab.tm_mday) + "/" + to_string(this->FechaFab.tm_mon) + "/" + to_string(this->FechaFab.tm_year) + " " + to_string(this->stock)+" "+this->numdeserie;
 	return resul;
 }
 

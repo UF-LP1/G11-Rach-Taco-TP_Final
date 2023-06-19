@@ -70,7 +70,9 @@ void cRegistros::set_fechaestimada(tm fe)
 
 string cRegistros::tostring()
 {
-	string resul = to_string(this->FechaDeSolicitud.tm_wday) + "/" + to_string(this->FechaDeSolicitud.tm_mon) + "/" + to_string(this->FechaDeSolicitud.tm_year) + " " + to_string(this->FechaEntrega.tm_wday) + "/" + to_string(this->FechaEntrega.tm_mon) + "/" + to_string(this->FechaEntrega.tm_year) + " " + to_string(this->FechaEstimadaEntrega.tm_wday) + "/" + to_string(this->FechaEstimadaEntrega.tm_mon) + "/" + to_string(this->FechaEstimadaEntrega.tm_year);
+	string resul = to_string(this->FechaDeSolicitud.tm_mday) + "/" + to_string(this->FechaDeSolicitud.tm_mon) + "/" + to_string(this->FechaDeSolicitud.tm_year) +
+		" " + to_string(this->FechaEntrega.tm_mday) + "/" + to_string(this->FechaEntrega.tm_mon) + "/" + to_string(this->FechaEntrega.tm_year) + 
+		" " + to_string(this->FechaEstimadaEntrega.tm_mday) + "/" + to_string(this->FechaEstimadaEntrega.tm_mon) + "/" + to_string(this->FechaEstimadaEntrega.tm_year);
 	return resul;
 }
 

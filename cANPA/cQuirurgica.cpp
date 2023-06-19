@@ -4,14 +4,6 @@ cQuirurgica::cQuirurgica(string dim, tipomat tipo, tren train, tm fecha, cFabric
 {
 }
 
-bool cQuirurgica::chequearAlergia(cPaciente* aux)
-{
-	bool alerg=false;
-	if (aux->get_alergias() == this->get_tipo())
-		return true;
-
-	return alerg;
-}
 
 string cQuirurgica::tostring()
 {

@@ -2,7 +2,7 @@
 #ifndef _CQUIRURGICA_H 
 #define _CQUIRURGICA_H 
 
-#include "cPaciente.h"
+#include "cPiezaOrt.h"
 
 
 
@@ -13,7 +13,7 @@ public:
 
 	cQuirurgica(string dim, tipomat tipo, tren train, tm fecha, cFabricante* fab,const string series);
 
-	bool chequearAlergia(cPaciente* aux);
+	
 	string tostring();
 	void imprimir();
 	~cQuirurgica();

@@ -31,6 +31,9 @@ public:
 
 	static int get_stock();
 
+	bool operator==(cPiezaOrt* aux);
+		
+
 	const string get_num();
 	
 	~cPiezaOrt();

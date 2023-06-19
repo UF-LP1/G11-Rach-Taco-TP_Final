@@ -83,7 +83,7 @@ void cHospital::operator-(cPaciente* aux)
 
 }
 
-int cHospital::operator=(string doc)
+int cHospital::operator=(string doc) 
 {
 	int i=0,k = 0;
 	bool esta = false;
@@ -100,6 +100,7 @@ int cHospital::operator=(string doc)
 
 void cHospital::buscarpieza(cPaciente* aux)
 {
+	bool alergia = false;
 	bool esta = false;
 	bool noconv = false;
 	int i = 0,k=0;
@@ -107,9 +108,12 @@ void cHospital::buscarpieza(cPaciente* aux)
 
 	while (i<ort.size()) { // chequeo si el paciente tiene protesis o no
 		while (k<ort[i]->get_piezas().size()) {
-			if (ort[i]->get_piezas()[k]->get_num() == aux->get_protesisnec()->get_num())
-				this->convenios[i]->entregarpieza(aux->get_protesisnec()); //se le entrega la protesis al paciente
-				aux->set_protesis(true); 
+			if (ort[i]->get_piezas()[k]->get_num() == aux->get_protesisnec()->get_num()) {
+				if (ort[i]->get_piezas()[k]->get_tipo() != aux->Alergias) { //chequeo las alergias y el material
+					this->convenios[i]->entregarpieza(aux->get_protesisnec()); //se le entrega la protesis al paciente
+					aux->set_protesis(true);
+				}
+			}
 			k++;
 		}
 		i++;
@@ -120,9 +124,10 @@ void cHospital::buscarpieza(cPaciente* aux)
 		while (i<ortnoconv.size()) {
 			while (k<ortnoconv[i]->get_piezas().size()) {
 				if (ortnoconv[i]->get_piezas()[k]->get_num() == aux->get_protesisnec()->get_num()) {
-					this->noconvenio[i]->entregarpieza(aux->get_protesisnec()); //como no dice que la ortopedia puede rechazar la solicitud se la asignamos automaticamente
-					aux->set_protesis(true);
-					
+					if (ort[i]->get_piezas()[k]->get_tipo() != aux->Alergias) {
+						this->noconvenio[i]->entregarpieza(aux->get_protesisnec()); //como no dice que la ortopedia puede rechazar la solicitud se la asignamos automaticamente
+						aux->set_protesis(true);
+					}
 				}
 				k++;
 			}
@@ -140,13 +145,15 @@ void cHospital::buscarpieza(cPaciente* aux)
 }
 
 
+bool chequearAlergia(cPaciente* aux,cPiezaOrt* ort) {
+	bool alerg = false;
+	if (aux->get_alergias() == ort->get_tipo())
+		return true;
 
-
-bool cHospital::operator==(cPiezaOrt* aux) //mi idea aca es con dynamic cast ver si es quirurgica o no para ver si la que necesita lo es o no tmb
-{//y despues comparar sus atributos, si es el mismo return true, sino comparar numero de serie
-
-	return false;
+	return alerg;
 }
+
+
 
 vector<cOrtopedia*> cHospital::get_noconvenio()
 {
@@ -173,7 +180,7 @@ ostream& operator<<(ostream& out, const cHospital& aux)
 		out << aux2[i]->get_nombre() << endl;
 		out << aux2[i]->get_apellido() << endl;
 		out << aux2[i]->get_documento() << endl;
-		out << aux2[i]->get_fecha().tm_year << "/" << aux2[i]->get_fecha().tm_mon << "/" << aux2[i]->get_fecha().tm_wday << endl;
+		out << aux2[i]->get_fecha().tm_year << "/" << aux2[i]->get_fecha().tm_mon << "/" << aux2[i]->get_fecha().tm_mday << endl;
 		out << aux2[i]->get_RadioAmp() << endl;
 		out << aux2[i]->get_telefono() << endl;
 		out << aux2[i]->get_alergias() << endl;

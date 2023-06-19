@@ -2,6 +2,9 @@
 #ifndef _CORTOPEDIA_H
 #define _CORTOPEDIA_H
 #include "cPiezaOrt.h"
+#include "cNoQuirurgica.h"
+#include "cQuirurgica.h"
+
 #include <vector>
 using namespace std;
 enum espec {Pierna,Brazo,Pie};

@@ -2,7 +2,7 @@
 #ifndef _CREGISTROS_H
 #define _CREGISTROS_H
 #include <string>
-#include "cPiezaOrt.h"
+
 #include "cHospital.h"
 #include"cFabricante.h"
 #include "cMedico.h"

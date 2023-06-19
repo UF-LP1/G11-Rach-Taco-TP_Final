@@ -47,8 +47,9 @@ public:
 
 	int operator=(string doc);
 
-	bool buscarpieza(cPaciente* aux);
+	void buscarpieza(cPaciente* aux);
 
+	bool chequearAlergia(cPaciente* aux);
 
 	bool operator==(cPiezaOrt* aux);
 

@@ -10,16 +10,13 @@ class cANPA
 public:
 	cANPA(vector<cRegistros*> reg, vector <cOrtopedia*> ortopedia);
 	bool chequeoalergias(cPaciente*);
-	bool busquedapieza(cPiezaOrt*);
-	void mandar_sol();
-	void contactarfabri();
 	friend ostream& operator<<(ostream& out, const cANPA& Aux);
 	vector<cRegistros*> get_registros();
 
-	vector<cOrtopedia*> get_ort();
+	
 
-	vector<cPaciente*> buscarpacporpieza(cPiezaOrt* aux);
-	vector<cPaciente*> buscarpacporhosp(cHospital* aux);
+	cPaciente* buscarpacporpieza(string aux);
+	vector<cPaciente*> buscarpacporhosp(string aux);
 
 	
 
@@ -28,7 +25,7 @@ private:
 
 	vector <cRegistros*> registros;
 	
-	vector<cOrtopedia*> Ortopedias;
+
 
 };
 
