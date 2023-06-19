@@ -1,7 +1,8 @@
 #include "cANPA.h"
 
-cANPA::cANPA(vector<cRegistros*> reg, vector<cOrtopedia*> ortopedia)
+cANPA::cANPA(vector<cRegistros*> reg)
 {
+	this->registros = reg;
 
 
 }

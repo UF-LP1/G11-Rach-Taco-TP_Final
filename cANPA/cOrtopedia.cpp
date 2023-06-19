@@ -4,8 +4,8 @@ cOrtopedia::cOrtopedia(string nom, string dir, vector<cPiezaOrt*> piezort, espec
 {
 	this->Nombre = nom;
 	this->Direccion = dir;
-	this->stock = stock;
 	this->especializacion = espe;
+	this->PiezasOrt = piezort;
 	stock++;
 }
 

@@ -2,6 +2,13 @@
 
 cRegistros::cRegistros(cHospital* hos,cMedico* med, cPiezaOrt* pie, cPaciente* pac, tm fechasol, tm fechaentreg, tm fechaest)
 {
+	this->hospital = hos;
+	this->medico = med;
+	this->piezaort = pie;
+	this->paciente = pac;
+	this->FechaDeSolicitud = fechasol;
+	this->FechaEntrega = fechaentreg;
+	this->FechaEstimadaEntrega = fechaest;
 }
 
 

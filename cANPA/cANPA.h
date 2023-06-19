@@ -8,7 +8,7 @@ using namespace std;
 class cANPA
 {
 public:
-	cANPA(vector<cRegistros*> reg, vector <cOrtopedia*> ortopedia);
+	cANPA(vector<cRegistros*> reg);
 	bool chequeoalergias(cPaciente*);
 	friend ostream& operator<<(ostream& out, const cANPA& Aux);
 	vector<cRegistros*> get_registros();

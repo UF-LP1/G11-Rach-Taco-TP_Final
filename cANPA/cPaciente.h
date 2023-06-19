@@ -42,6 +42,7 @@ public:
 	void set_telefono(string tele);
 
 		cHospital* get_hospital();
+		void set_hospital(cHospital* hosp);
 		
 		cPiezaOrt* get_protesisnec();
 

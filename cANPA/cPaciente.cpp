@@ -11,6 +11,7 @@ cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel
 	this->Alergias = aux;
 	this->protesis = prot;
 	this->hospital = hos;
+	this->ProtesisNecesaria = pieznec;
 }
 
 alergia cPaciente::get_alergias()

@@ -5,6 +5,10 @@ cHospital::cHospital(string name, string dire, vector<cMedico*> medicos, vector<
 	this->Nombre = name;
 	this->Direccion = dire;
 	this->Especialidad = especialidad;
+	this->Medicos = medicos;
+	this->Pacientes = pacientes;
+	this->convenios = conv;
+	this->noconvenio = noconv;
 
 }
 
@@ -172,6 +176,8 @@ ostream& operator<<(ostream& out, const cHospital& aux)
 
 	vector <cPaciente*> aux2 = aux.Pacientes;
 	vector<cMedico*> aux3 = aux.Medicos;
+	vector<cOrtopedia*> conv = aux.convenios;
+	vector<cOrtopedia*> noconv = aux.noconvenio;
 
 	for (i = 0; i < aux2.size(); i++) {
 
@@ -193,6 +199,16 @@ ostream& operator<<(ostream& out, const cHospital& aux)
 		out << aux3[i]->get_matricula();
 
 	}
+	for (i = 0; i < conv.size(); i++) {
+		out << conv[i]->get_direccion() << endl;
+			out << conv[i]->get_especializacion() << endl;
+			out << conv[i]->get_nombre() << endl;
+}
+	for (i = 0; i < noconv.size(); i++) {
+		out << noconv[i]->get_direccion() << endl;
+		out << noconv[i]->get_especializacion() << endl;
+		out << noconv[i]->get_nombre() << endl;
+
 		return out;
 }
 
