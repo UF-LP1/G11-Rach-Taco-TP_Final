@@ -32,21 +32,30 @@ public:
 
 		bool get_protesis();
 		void set_protesis(bool aux);
-		bool operator==(cPiezaOrt* aux);
+		
 		string tostring();
 		void imprimir();
 	~cPaciente();
 
 private:
 	string Nombre;
+
 	string Apellido;
+
 	tm FechaNacimiento;
+
 	string Documento;
+
 	string Telefono;
+
  cHospital* hospital;
+
 	alergia Alergias;
+
 	unsigned int RadioAmp;
+
  cPiezaOrt* ProtesisNecesaria;
+
 	bool protesis;
 
 

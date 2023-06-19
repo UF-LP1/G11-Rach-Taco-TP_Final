@@ -150,8 +150,8 @@
     <ClInclude Include="cPiezaOrt.h" />
     <ClInclude Include="cQuirurgica.h" />
     <ClInclude Include="cRegistros.h" />
-    <ClInclude Include="MedNoExiste.h" />
-    <ClInclude Include="Medrepetido.h" />
+    <ClInclude Include="PacNoExiste.h" />
+    <ClInclude Include="Pacrepetido.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cANPA.cpp" />

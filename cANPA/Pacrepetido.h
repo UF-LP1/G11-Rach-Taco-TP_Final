@@ -2,11 +2,11 @@
 #include <exception>
 #include <string>
 using namespace std;
-class Medrepetido:public exception
+class Pacrepetido:public exception
 {
 
 	const char* what() const throw() {
-		return "El medico se encuentra en la lista";
+		return "El paciente se encuentra en la lista";
 	}
 
 };

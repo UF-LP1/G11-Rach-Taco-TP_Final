@@ -67,6 +67,11 @@ void cPiezaOrt::set_fecha(tm fecha)
 	this->FechaFab = fecha;
 }
 
+cFabricante* cPiezaOrt::get_fab()
+{
+	return this->Fabricante;
+}
+
 
 string cPiezaOrt::tostring()
 {

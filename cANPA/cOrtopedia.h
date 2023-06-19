@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 enum espec {Pierna,Brazo,Pie};
-class cOrtopedia //eliminar vector de convenios y reemplazarlo por un vecto de ortopedias en cHospital
+class cOrtopedia 
 {
 public:
 	
@@ -19,6 +19,8 @@ public:
 	static int get_stock();
 	espec get_especializacion();
 	void set_especializacion(espec espe);
+
+	void entregarpieza(cPiezaOrt* aux);
 	
 	string tostring();
 	void imprimir();

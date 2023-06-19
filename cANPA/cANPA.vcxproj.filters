@@ -45,10 +45,10 @@
     <ClInclude Include="cRegistros.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Medrepetido.h">
+    <ClInclude Include="Pacrepetido.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="MedNoExiste.h">
+    <ClInclude Include="PacNoExiste.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

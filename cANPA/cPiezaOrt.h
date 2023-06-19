@@ -25,7 +25,7 @@ public:
 	void set_tren(tren train);
 	tm get_fecha();
 	void set_fecha(tm fecha);
-
+	cFabricante* get_fab();
 	string tostring();
 	void imprimir();
 

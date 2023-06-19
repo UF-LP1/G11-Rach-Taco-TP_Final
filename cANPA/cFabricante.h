@@ -11,8 +11,7 @@ class cFabricante
 public:
 
 	cFabricante(string name, string ape, unsigned int num);
-	void recibirsolicitud();
-	void rechazarsolicitud();
+
 	void fabricarprotesis(cPiezaOrt*);
 
 	string get_nombre();
@@ -21,6 +20,8 @@ public:
 	void set_apellido(string ape);
 	unsigned int get_numerodehab();
 	void set_numerodehab(unsigned int num);
+
+	int respuesta();
 	string tostring();
 	void imprimir();
 

@@ -61,35 +61,35 @@ void cHospital::imprimir()
 	cout << this->tostring();
 }
 
-void cHospital::operator+(cMedico* aux)
+void cHospital::operator+(cPaciente* aux)
 {
-	int i = this->operator=(aux->get_matricula());
+	int i = this->operator=(aux->get_documento());
 	if (i != -1)
-		throw new Medrepetido();
+		throw new Pacrepetido();
 	else
-		this->Medicos.push_back(aux);
+		this->Pacientes.push_back(aux);
 	return;
 
 }
 
-void cHospital::operator-(cMedico* aux) 
+void cHospital::operator-(cPaciente* aux) 
 {
-	int i = this->operator=(aux->get_matricula());
+	int i = this->operator=(aux->get_documento());
 	if (i != -1)
-		throw new MedNoExiste();
+		throw new PacNoExiste();
 	else
-		this->Medicos.erase(this->Medicos.begin() + i);
+		this->Pacientes.erase(this->Pacientes.begin() + i);
 	return;
 
 }
 
-int cHospital::operator=(string matri)
+int cHospital::operator=(string doc)
 {
 	int i=0,k = 0;
 	bool esta = false;
-	vector<cMedico*> aux = this->Medicos;
+	vector<cPaciente*> aux = this->Pacientes;
 	while (esta == false) {
-		if (aux[i]->get_matricula() == matri) {
+		if (aux[i]->get_documento() == doc) {
 			esta = true;
 			k = i;
 		}
@@ -97,6 +97,62 @@ int cHospital::operator=(string matri)
 	return k;
 
 }
+
+void cHospital::buscarpieza(cPaciente* aux)
+{
+	bool esta = false;
+	bool noconv = false;
+	int i = 0,k=0;
+	vector<cOrtopedia*> ort = this->convenios;
+
+	while (i<ort.size()) { // chequeo si el paciente tiene protesis o no
+		while (k<ort[i]->get_piezas().size()) {
+			if (ort[i]->get_piezas()[k]->get_num() == aux->get_protesisnec()->get_num())
+				this->convenios[i]->entregarpieza(aux->get_protesisnec()); //se le entrega la protesis al paciente
+				aux->set_protesis(true); 
+			k++;
+		}
+		i++;
+	}
+	i = 0, k = 0;;
+	vector<cOrtopedia*>ortnoconv = this->noconvenio; //chequeo en las que no tiene convenio
+	if (aux->get_protesis()==false) {
+		while (i<ortnoconv.size()) {
+			while (k<ortnoconv[i]->get_piezas().size()) {
+				if (ortnoconv[i]->get_piezas()[k]->get_num() == aux->get_protesisnec()->get_num()) {
+					this->noconvenio[i]->entregarpieza(aux->get_protesisnec()); //como no dice que la ortopedia puede rechazar la solicitud se la asignamos automaticamente
+					aux->set_protesis(true);
+					
+				}
+				k++;
+			}
+			i++;
+		}
+	}
+	int resp;
+	if (aux->get_protesis() == false) //le mando al fabricnate la solicitud
+		resp = aux->get_protesisnec()->get_fab()->respuesta();
+	if (resp == 1)
+		aux->set_protesis(true);
+
+
+	return;
+}
+
+
+
+
+bool cHospital::operator==(cPiezaOrt* aux) //mi idea aca es con dynamic cast ver si es quirurgica o no para ver si la que necesita lo es o no tmb
+{//y despues comparar sus atributos, si es el mismo return true, sino comparar numero de serie
+
+	return false;
+}
+
+vector<cOrtopedia*> cHospital::get_noconvenio()
+{
+	return this->noconvenio;
+}
+
 
 cHospital::~cHospital()
 {

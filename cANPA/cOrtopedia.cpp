@@ -53,6 +53,21 @@ void cOrtopedia::set_especializacion(espec espe)
 
 }
 
+void cOrtopedia::entregarpieza(cPiezaOrt* aux)
+{
+	bool entregado = false;
+	int i = 0;
+
+	while (entregado == false) {
+		if (this->PiezasOrt[i]->get_num() == aux->get_num()) { //busca por numero de serie, si lo encuentra lo elimina de la lista
+			entregado = true;
+			this->PiezasOrt.erase(this->PiezasOrt.begin() + i);
+		}
+		i++;
+	}
+
+}
+
 
 
 string cOrtopedia::tostring()

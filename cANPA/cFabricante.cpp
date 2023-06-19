@@ -8,17 +8,6 @@ cFabricante::cFabricante(string name, string ape, unsigned int num)
 
 }
 
-void cFabricante::recibirsolicitud()
-{
-
-
-}
-
-void cFabricante::rechazarsolicitud()
-{
-
-
-}
 
 void cFabricante::fabricarprotesis(cPiezaOrt*)
 {
@@ -54,6 +43,14 @@ unsigned int cFabricante::get_numerodehab()
 void cFabricante::set_numerodehab(unsigned int num)
 {
 	this->NumerodeHab = num;
+}
+
+int cFabricante::respuesta()
+{
+	srand(time(NULL));
+	int respuesta = rand() % 2;
+
+	return respuesta ;
 }
 
 string cFabricante::tostring()
