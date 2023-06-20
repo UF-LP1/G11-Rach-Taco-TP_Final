@@ -192,6 +192,7 @@ int main() {
 			}
 			catch (exception* e) {
 				cout << e->what() << endl;
+				delete e;
 			}
 			Bot->imprimir();
 			break;
@@ -199,8 +200,13 @@ int main() {
 		case 3:
 			cout << "Ingrese el nombre del hospital" << endl;
 			cin >> nomhospi;
-
-			Vacia = ANPA->buscarpacporhosp(nomhospi);
+			try {
+				Vacia = ANPA->buscarpacporhosp(nomhospi);
+			}
+			catch (exception* e) {
+				cout << e->what() << endl;
+				delete e;
+			}
 			for (int i = 0; i < Vacia.size(); i++) {
 				Vacia[i]->imprimir();
 			}
@@ -214,7 +220,13 @@ int main() {
 		case 5:
 			cout << "Ingrese el dni del paciente que recibira la protesis" << endl;
 			cin >> dnibusqueda;
-			Fava->buscarpieza(Fava->buscarpac(dnibusqueda));
+			try {
+				Fava->buscarpieza(Fava->buscarpac(dnibusqueda));
+			}
+			catch (exception* e) {
+				cout << e->what() << endl;
+				delete e;
+			}
 			break;
 		case 6:
 			cout << "Hasta luego" << endl;

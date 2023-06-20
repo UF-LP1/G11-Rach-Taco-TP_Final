@@ -176,11 +176,14 @@ vector<cOrtopedia*> cHospital::get_noconvenio()
 
 cPaciente* cHospital::buscarpac(string dni)
 {
-	int i = 0;
-	while (dni != this->Pacientes[i]->get_documento()) {
-		i++;
+	int i = 0,k=-1;
+	for (i = 0; i < this->Pacientes.size();i++) {
+		if (this->Pacientes[i]->get_documento() == dni)
+			k = i;
 	}
-	return this->Pacientes[i];
+	if (k == -1)
+		throw new PacNoExiste();
+	return this->Pacientes[k];
 }
 
 cHospital::~cHospital()
