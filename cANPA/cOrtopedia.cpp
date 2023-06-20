@@ -105,11 +105,10 @@ for (i = 0; i < aux.size(); i++) {
 	out << aux[i]->get_fecha().tm_year << aux[i]->get_fecha().tm_mon<< aux[i]->get_fecha().tm_mday<<endl;
 	out << aux[i]->get_tipo() << endl;
 	out << aux[i]->get_tren() << endl;
-	out << aux[i]->get_stock();
-	cNoQuirurgica* noq = dynamic_cast<cNoQuirurgica*>(aux[i]);
+	/*cNoQuirurgica* noq = dynamic_cast<cNoQuirurgica*>(aux[i]);
 	if (noq != nullptr) {
-		noq->get_radio();
-	}
+		out<<noq->get_radio();
+	}*/
 
 }
 	return out;

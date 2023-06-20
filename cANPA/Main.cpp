@@ -92,6 +92,9 @@ int main() {
 
 	Ort->agregarpieza(Piezaquir);
 	Ort->agregarpieza(Pieza);
+	Ort->agregarpieza(Pieza);
+	Ort->agregarpieza(Pieza);
+	Ort->agregarpieza(Pieza);
 	Ort2->agregarpieza(Piezaquir);
 
 	try {
@@ -169,7 +172,7 @@ int main() {
 			} while (prot != 1 && prot != 0);
 			
 		 prote = prot;
-			 date = { 0,0,0,dia,mes - 1,anio - 1900 };
+			 date = { 0,0,0,dia,mes - 1,anio};
 
 			Nuevo = crearpac(nombre, apellido, date, dni, telefono, Fava->get_nombre(), nada, 3, Pieza, prot);
 			try {
@@ -233,7 +236,13 @@ int main() {
 				delete e;
 			}
 			break;
+
 		case 6:
+
+			cout << *Ort;
+			break;
+
+		case 7:
 			cout << "Hasta luego" << endl;
 			break;
 
@@ -242,7 +251,7 @@ int main() {
 			break;
 
 		}
-	} while (opcion != 6);
+	} while (opcion != 7);
 
 	cout << Stefano->get_protesis();
 
@@ -262,7 +271,8 @@ cout << "\t2) Buscar paciente por Protesis" << endl;
 cout << "\t3) Buscar Paciente por Hospital" << endl;
 cout << "\t4) Eliminar Paciente" << endl;
 cout << "\t5) Asignar Protesis" << endl;
-cout << "\t6) Salir" << endl;
+cout << "\t6) Imprimir lista Protesis" << endl;
+cout << "\t7) Salir" << endl;
 
 int opcion;
 cin >> opcion;
