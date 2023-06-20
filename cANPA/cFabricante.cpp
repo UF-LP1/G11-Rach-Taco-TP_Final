@@ -9,12 +9,6 @@ cFabricante::cFabricante(string name, string ape, unsigned int num)
 }
 
 
-void cFabricante::fabricarprotesis(cPiezaOrt*)
-{
-
-
-}
-
 string cFabricante::get_nombre()
 {
 	return this->Nombre;

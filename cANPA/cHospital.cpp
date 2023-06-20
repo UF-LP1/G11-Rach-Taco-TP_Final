@@ -150,11 +150,13 @@ void cHospital::buscarpieza(cPaciente* aux)
 
 
 bool chequearAlergia(cPaciente* aux,cPiezaOrt* ort) {
-	bool alerg = false;
-	if (aux->get_alergias() == ort->get_tipo())
+
+	if (aux->get_alergias() == nullptr)
+		return false;
+	else if (aux->get_alergias() == ort->get_tipo())
 		return true;
 
-	return alerg;
+	return false;
 }
 
 
@@ -170,8 +172,8 @@ cHospital::~cHospital()
 
 }
 
-ostream& operator<<(ostream& out, const cHospital& aux)
-{
+ostream& operator<<(ostream& out, const cHospital& aux) {
+
 	int i = 0;
 
 	vector <cPaciente*> aux2 = aux.Pacientes;
@@ -191,7 +193,7 @@ ostream& operator<<(ostream& out, const cHospital& aux)
 		out << aux2[i]->get_telefono() << endl;
 		out << aux2[i]->get_alergias() << endl;
 		out << aux2[i]->get_protesis() << endl;
-		
+
 	}
 	for (i = 0; i < aux3.size(); i++) {
 		out << aux3[i]->get_nombre() << endl;
@@ -201,14 +203,15 @@ ostream& operator<<(ostream& out, const cHospital& aux)
 	}
 	for (i = 0; i < conv.size(); i++) {
 		out << conv[i]->get_direccion() << endl;
-			out << conv[i]->get_especializacion() << endl;
-			out << conv[i]->get_nombre() << endl;
-}
+		out << conv[i]->get_especializacion() << endl;
+		out << conv[i]->get_nombre() << endl;
+	}
 	for (i = 0; i < noconv.size(); i++) {
 		out << noconv[i]->get_direccion() << endl;
 		out << noconv[i]->get_especializacion() << endl;
 		out << noconv[i]->get_nombre() << endl;
 
 		return out;
+	}
 }
 

@@ -3,19 +3,19 @@
 #define _CPACIENTE_H
 #include <vector>
 #include "cPiezaOrt.h"
-
+#include "Material.h"
 class cHospital;
 
-enum alergia { No, Titanio, Acero, Polimero, Plastico };
+
 class cPaciente
 {
 public:
 	
-	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,cHospital* hos, alergia Aux, unsigned int radamp,cPiezaOrt* pieznec,bool protesis );
+	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,cHospital* hos, Material* Aux, unsigned int radamp,cPiezaOrt* pieznec,bool protesis );
 	
-	alergia get_alergias();
+	Material* get_alergias();
 
-	void set_alergias(alergia aux);
+	void set_alergias(Material* aux);
 
 	unsigned int get_RadioAmp();
 
@@ -44,6 +44,8 @@ public:
 		cHospital* get_hospital();
 		void set_hospital(cHospital* hosp);
 		
+		int get_alergiasennum();
+
 		cPiezaOrt* get_protesisnec();
 
 		bool get_protesis();
@@ -69,7 +71,7 @@ private:
 
  cHospital* hospital;
 
-	alergia Alergias;
+	Material* Alergias;
 
 	unsigned int RadioAmp;
 

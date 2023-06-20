@@ -4,23 +4,24 @@
 #include <iostream>
 #include <string>
 #include <ctime>
-#include"cFabricante.h"
 
+#include "Material.h"
 
+#include "cFabricante.h"
 using namespace std;
-enum tipomat { Titanio=1, Acero, Polimero, Plastico };
+
 enum tren{Superior,inferior};
 
 class cPiezaOrt
 {
 public:
 
-	cPiezaOrt(string dim, tipomat tipo,tren train,tm fecha,cFabricante* fab,const string series);
+	cPiezaOrt(string dim, Material* tipo,tren train,tm fecha,cFabricante* fab,const string series);
 
 	string get_dimensiones();
 	void set_dimensiones(string dim);
-	tipomat get_tipo();
-	void set_tipo(tipomat tipo);
+	Material* get_tipo();
+	void set_tipo(Material* tipo);
 	tren get_tren();
 	void set_tren(tren train);
 	tm get_fecha();
@@ -33,13 +34,13 @@ public:
 
 	bool operator==(cPiezaOrt* aux);
 		
-
+	int get_tipoennum();
 	const string get_num();
 	
 	~cPiezaOrt();
 private:
 	string Dimensiones;
-	tipomat TipodeMaterial; 
+	Material* TipodeMaterial; 
 	tren Tren;
 	tm FechaFab;
 	cFabricante* Fabricante;

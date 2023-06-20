@@ -11,7 +11,7 @@ class cQuirurgica: public cPiezaOrt
 {
 public:
 
-	cQuirurgica(string dim, tipomat tipo, tren train, tm fecha, cFabricante* fab,const string series);
+	cQuirurgica(string dim, Material* tipo, tren train, tm fecha, cFabricante* fab,const string series);
 
 	
 	string tostring();

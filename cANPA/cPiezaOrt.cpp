@@ -1,6 +1,6 @@
 #include "cPiezaOrt.h"
 static int stock = 0;
-cPiezaOrt::cPiezaOrt(string dim, tipomat tipo, tren train, tm fecha, cFabricante* fab,const string series):numdeserie(series)
+cPiezaOrt::cPiezaOrt(string dim, Material* tipo, tren train, tm fecha, cFabricante* fab,const string series):numdeserie(series)
 {
 	this->Dimensiones = dim;
 	this->TipodeMaterial = tipo;
@@ -48,12 +48,19 @@ void cPiezaOrt::set_dimensiones(string dim)
 	this->Dimensiones = dim;
 }
 
-tipomat cPiezaOrt::get_tipo()
+Material* cPiezaOrt::get_tipo()
 {
+	
 	return this->TipodeMaterial;
 }
 
-void cPiezaOrt::set_tipo(tipomat tipo)
+int cPiezaOrt::get_tipoennum() {
+	Material* aux = this->get_tipo();
+	int i = (int)aux;
+	return i;
+}
+
+void cPiezaOrt::set_tipo(Material* tipo)
 {
 	this->TipodeMaterial = tipo;
 }

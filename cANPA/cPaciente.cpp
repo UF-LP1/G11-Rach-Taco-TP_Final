@@ -1,6 +1,6 @@
 #include "cPaciente.h"
 
-cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel,cHospital* hos, alergia aux, unsigned int radamp, cPiezaOrt* pieznec,bool prot)
+cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel,cHospital* hos, Material* aux, unsigned int radamp, cPiezaOrt* pieznec,bool prot)
 {
 	this->Nombre = nom;
 	this->Apellido = ape;
@@ -14,12 +14,12 @@ cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel
 	this->ProtesisNecesaria = pieznec;
 }
 
-alergia cPaciente::get_alergias()
+Material* cPaciente::get_alergias()
 {
 	return this->Alergias;
 }
 
-void cPaciente::set_alergias(alergia aux)
+void cPaciente::set_alergias(Material* aux)
 {
 	this->Alergias = aux;
 }
@@ -108,11 +108,15 @@ void cPaciente::set_protesis(bool aux)
 {
 	this->protesis = aux;
 }
-
+int cPaciente::get_alergiasennum() {
+	Material* aux = this->get_alergias();
+	int i = (int)aux;
+	return i;
+}
 
 string cPaciente::tostring()
 {
-	string resul = this->Nombre + " " + this->Apellido + " " + to_string(this->FechaNacimiento.tm_mday) + "/" + to_string(this->FechaNacimiento.tm_mon) + "/" + to_string(this->FechaNacimiento.tm_year) + " " + this->Documento + " " + this->Telefono + " " + to_string(this->Alergias) + " " + to_string(this->RadioAmp) + " " + to_string(this->protesis);
+	string resul = this->Nombre + " " + this->Apellido + " " + to_string(this->FechaNacimiento.tm_mday) + "/" + to_string(this->FechaNacimiento.tm_mon) + "/" + to_string(this->FechaNacimiento.tm_year) + " " + this->Documento + " " + this->Telefono + " " + to_string(this->get_alergiasennum()) + " " + to_string(this->RadioAmp) + " " + to_string(this->protesis);
 
 	return resul;
 }

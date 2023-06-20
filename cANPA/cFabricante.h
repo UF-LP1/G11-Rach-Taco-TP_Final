@@ -2,17 +2,17 @@
 #ifndef _CFABRICANTE_H
 #define _CFABRICANTE_H
 #include <string>
-#include "cPiezaOrt.h"
+
 #include <iostream>
 using namespace std;
-
+class cPiezaOrt;
 class cFabricante
 {
 public:
 
 	cFabricante(string name, string ape, unsigned int num);
 
-	void fabricarprotesis(cPiezaOrt*);
+	
 
 	string get_nombre();
 	void set_nombre(string nom);
@@ -24,6 +24,8 @@ public:
 	int respuesta();
 	string tostring();
 	void imprimir();
+
+	friend class cPiezaOrt;
 
 	~cFabricante();
 private:
