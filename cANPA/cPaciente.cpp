@@ -149,3 +149,17 @@ cPaciente::~cPaciente()
 {
 }
 
+istream& operator>>(istream& in, cPaciente& aux)
+{
+	
+	in >> aux.Nombre;
+		in >> aux.Apellido;
+		in >> aux.Documento;
+		in >> aux.FechaNacimiento.tm_mday;
+		in >> aux.FechaNacimiento.tm_mon;
+		in >> aux.FechaNacimiento.tm_year;
+		
+		in >> aux.hospital;
+
+		return in;
+}

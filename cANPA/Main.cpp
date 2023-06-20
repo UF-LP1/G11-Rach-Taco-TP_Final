@@ -1,6 +1,18 @@
 
 #include "cANPA.h"
 
+int menu() {
+	cout << "\t\t Menu" << endl;
+	cout << "\t1) Agregar Paciente" << endl;
+	cout << "\t2) Buscar paciente por Protesis" << endl;
+	cout << "\t3) Buscar Paciente por Hospital"<<endl;
+	cout << "\t4) Eliminar Paciente" << endl;
+	cout << "\t5) Asignar Protesis" << endl;
+
+	int opcion;
+	cin >> opcion;
+	return opcion;
+}
 
 
 int main() {
@@ -77,7 +89,7 @@ int main() {
 		cout << e->what()<<endl;
 		delete e;
 	}
-	/*cout << *Fava;*/
+	cout << *Fava;
 	
 	cout << Bautista->get_protesis() << endl;
 
@@ -91,6 +103,8 @@ int main() {
 
 	
 	cout<<ANPA->buscarpacporhosp("Favaloro")[0]->get_nombre()<<endl<< ANPA->buscarpacporhosp("Favaloro")[1]->get_nombre()<<endl;
+
+	cout << *ANPA;
 
 	cout << Bautista->operator==(Piezaquir);
 

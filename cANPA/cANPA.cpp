@@ -72,18 +72,26 @@ ostream& operator<<(ostream& out, const cANPA& Aux)
 
 
 	for (i = 0; i < auxreg.size(); i++) {
-		cHospital* hos = auxreg[i]->get_hospi();
+		string hos = auxreg[i]->get_hospi()->get_nombre();
 		cMedico* med = auxreg[i]->get_med();
 		cPiezaOrt* piez = auxreg[i]->get_pieza();
 		cPaciente* pac = auxreg[i]->get_pac();
 
-		out << hos->get_nombre() << endl;
-		out << med->get_nombre() << " " << med->get_apellido() << endl;
+		out << hos << endl;
+		out << med->get_nombre() << " ";
+		out<< med->get_apellido() << endl;
 		out << piez->get_tipo() << endl;
-		out << pac->get_apellido() << "," << pac->get_documento() << endl;
-		out << auxreg[i]->get_fechaentrega().tm_year << auxreg[i]->get_fechaentrega().tm_mon << auxreg[i]->get_fechaentrega().tm_mday << endl;
-		out << auxreg[i]->get_fechaestimada().tm_year << auxreg[i]->get_fechaestimada().tm_mon << auxreg[i]->get_fechaestimada().tm_mday << endl;
-		out << auxreg[i]->get_fechasoli().tm_year << auxreg[i]->get_fechasoli().tm_mon << auxreg[i]->get_fechasoli().tm_mday << endl;
+		out << pac->get_apellido() << ",";
+		out<< pac->get_documento() << endl;
+		out << auxreg[i]->get_fechaentrega().tm_year<<"/";
+		out << auxreg[i]->get_fechaentrega().tm_mon<<"/";
+				out<< auxreg[i]->get_fechaentrega().tm_mday << endl;
+				out << auxreg[i]->get_fechaestimada().tm_year<<"/";
+				out << auxreg[i]->get_fechaestimada().tm_mon << "/";
+					out<< auxreg[i]->get_fechaestimada().tm_mday << endl;
+					out << auxreg[i]->get_fechasoli().tm_year<<"/";
+					out << auxreg[i]->get_fechasoli().tm_mon<<"/";
+					out<< auxreg[i]->get_fechasoli().tm_mday << endl;
 		
 	}
 	

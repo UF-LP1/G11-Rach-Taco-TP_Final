@@ -56,9 +56,10 @@ public:
 		string tostring();
 		void imprimir();
 	~cPaciente();
-	
+	friend istream& operator>>(istream& in, cPaciente& aux);
 
 	friend class cHospital;
+
 
 private:
 	string Nombre;
