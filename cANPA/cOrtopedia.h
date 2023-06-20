@@ -32,11 +32,13 @@ public:
 
 	~cOrtopedia();
 
+
+	static int stock;
 private:
 	string Nombre;
 	string Direccion;
 	vector<cPiezaOrt*> PiezasOrt;
-	static int stock;
+
 	espec especializacion;
 	
 

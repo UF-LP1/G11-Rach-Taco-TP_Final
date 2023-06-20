@@ -1,3 +1,6 @@
 #pragma once
+#ifndef _MATERIAL_H
+#define _MATERIAL_H
 
-enum Material{Titanio,Acero,Polimero,Plastico};
+typedef enum  { Titanio, Acero, Polimero, Plastico }Material;
+#endif

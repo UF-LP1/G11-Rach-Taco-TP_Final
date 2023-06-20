@@ -1,5 +1,5 @@
 #include "cPiezaOrt.h"
-static int stock = 0;
+int cPiezaOrt::stock = 0;
 cPiezaOrt::cPiezaOrt(string dim, Material* tipo, tren train, tm fecha, cFabricante* fab,const string series):numdeserie(series)
 {
 	this->Dimensiones = dim;
@@ -91,7 +91,7 @@ cFabricante* cPiezaOrt::get_fab()
 }
 
 
-string cPiezaOrt::tostring(){}
+
 //{
 //	string resul = this->Dimensiones + " " + to_string(this->TipodeMaterial) + " " + to_string(this->Tren) + " " + to_string(this->FechaFab.tm_mday) + "/" + to_string(this->FechaFab.tm_mon) + "/" + to_string(this->FechaFab.tm_year) + " " + to_string(this->stock)+" "+this->numdeserie;
 //	return resul;

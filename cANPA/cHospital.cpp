@@ -138,7 +138,7 @@ void cHospital::buscarpieza(cPaciente* aux)
 			i++;
 		}
 	}
-	int resp;
+	int resp=0;
 	if (aux->get_protesis() == false) //le mando al fabricnate la solicitud
 		resp = aux->get_protesisnec()->get_fab()->respuesta();
 	if (resp == 1)
@@ -149,7 +149,7 @@ void cHospital::buscarpieza(cPaciente* aux)
 }
 
 
-bool chequearAlergia(cPaciente* aux,cPiezaOrt* ort) {
+bool cHospital::chequearAlergia(cPaciente* aux,cPiezaOrt* ort) {
 
 	if (aux->get_alergias() == nullptr)
 		return false;
@@ -211,7 +211,8 @@ ostream& operator<<(ostream& out, const cHospital& aux) {
 		out << noconv[i]->get_especializacion() << endl;
 		out << noconv[i]->get_nombre() << endl;
 
-		return out;
+		
 	}
+	return out;
 }
 

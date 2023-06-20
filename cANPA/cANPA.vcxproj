@@ -166,6 +166,7 @@
     <ClCompile Include="cQuirurgica.cpp" />
     <ClCompile Include="cRegistros.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Material.cpp" />
     <ClCompile Include="MedNoExiste.cpp" />
     <ClCompile Include="Medrepetido.cpp" />
   </ItemGroup>

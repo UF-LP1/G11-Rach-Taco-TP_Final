@@ -27,7 +27,7 @@ public:
 	tm get_fecha();
 	void set_fecha(tm fecha);
 	cFabricante* get_fab();
-	virtual string tostring();
+	virtual string tostring()=0;
 	virtual void imprimir();
 
 	static int get_stock();
@@ -38,6 +38,8 @@ public:
 	const string get_num();
 	
 	~cPiezaOrt();
+
+	static int stock;
 private:
 	string Dimensiones;
 	Material* TipodeMaterial; 
@@ -45,7 +47,7 @@ private:
 	tm FechaFab;
 	cFabricante* Fabricante;
 	const string numdeserie;
-	static int stock;
+	
 
 };
 

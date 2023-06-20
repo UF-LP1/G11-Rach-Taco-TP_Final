@@ -1,5 +1,5 @@
 #include "cOrtopedia.h"
-static int stock = 0;
+ int cOrtopedia::stock = 0;
 cOrtopedia::cOrtopedia(string nom, string dir, vector<cPiezaOrt*> piezort, espec espe)
 {
 	this->Nombre = nom;
