@@ -162,8 +162,7 @@ int main() {
 			cout << "ingrese anio de nacimiento" << endl;
 			cin >> anio;
 			
-			cout << "Ingrese el nombre del hospital del paciente" << endl;
-			cin >> hospi;
+			
 			do {
 				cout << "Indique si tiene una protesis (0 o 1)" << endl;
 				cin >> prot;
@@ -172,7 +171,7 @@ int main() {
 		 prote = prot;
 			 date = { 0,0,0,dia,mes - 1,anio - 1900 };
 
-			Nuevo = crearpac(nombre, apellido, date, dni, telefono, hospi, nada, 3, Pieza, prot);
+			Nuevo = crearpac(nombre, apellido, date, dni, telefono, Fava->get_nombre(), nada, 3, Pieza, prot);
 			try {
 				Fava->operator+(Nuevo);
 			}
@@ -214,7 +213,13 @@ int main() {
 		case 4:
 			cout << "Ingrese el Dni del paciente a eliminar" << endl;
 			cin >> dni;
-			ANPA->operator-(dni);
+			try {
+				ANPA->operator-(dni);
+			}
+			catch (exception* e) {
+				cout << e->what() << endl;
+				delete e;
+			}
 			break;
 
 		case 5:
