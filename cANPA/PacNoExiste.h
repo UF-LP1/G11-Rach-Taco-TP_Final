@@ -8,7 +8,7 @@ using namespace std;
 class PacNoExiste:public exception
 {
 	const char* what() const throw() {
-		return "El paciente no se encuentra en la lista";
+		return "ERROR: El paciente no se encuentra en la lista";
 	}
 
 };

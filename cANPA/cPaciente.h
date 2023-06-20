@@ -49,9 +49,13 @@ public:
 		cPiezaOrt* get_protesisnec();
 
 		bool get_protesis();
-		void set_protesis(bool aux);
+		void set_protesis(int aux);
 
 		bool operator==(cPiezaOrt* aux);
+
+		void set_dianac(int aux);
+		void set_mesnac(int aux);
+		void set_anionac(int aux);
 		
 		string tostring();
 		void imprimir();

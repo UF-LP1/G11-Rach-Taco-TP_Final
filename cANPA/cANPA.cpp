@@ -34,7 +34,7 @@ cPaciente* cANPA::buscarpacporpieza(string numdeserie) //anyadir numero de serie
 
 	int i = 0;
 	for (i = 0; i < reg.size(); i++) {
-		if (reg[i]->get_pieza()->get_num() == numdeserie)
+		if (reg[i]->get_pieza()->get_num() == numdeserie && reg[i]->get_pac()->get_protesis() == true)
 			lista=(reg[i]->get_pac());
 
  }
@@ -50,13 +50,41 @@ vector<cPaciente*> cANPA::buscarpacporhosp(string nom) {
 	vector<cRegistros*> reg = this->registros;
 	int i = 0;
 	for (i = 0; i < reg.size(); i++) {
-		if (reg[i]->get_hospi()->get_nombre() == nom)
+		if (reg[i]->get_hospi()->get_nombre() == nom && reg[i]->get_pac()->get_protesis() != false) //chequeo que tenga protesis y sea del hospital
 			pac.push_back(reg[i]->get_pac());
 	}
-	
+	if (pac[0] == nullptr)
+		throw new VectorVacio();
 	return pac;
 
 }
+
+void cANPA::operator-(string aux)
+{
+	int i = this->operator=(aux);
+	if (i == -1)
+		throw new PacNoExiste();
+	this->registros.erase(this->registros.begin() + i);
+	return;
+
+}
+
+int cANPA::operator=(string doc)
+{
+	int i = 0, k = -1;
+
+	vector<cRegistros*> aux = this->registros;
+	for (i = 0; i < aux.size(); i++) {
+		if (aux[i]->get_pac()->get_documento() == doc) {
+
+			k = i;
+		}
+
+	}
+	return k;
+
+}
+
 
 
 cANPA::~cANPA()

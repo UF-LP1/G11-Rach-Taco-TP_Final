@@ -18,7 +18,8 @@ public:
 	cPaciente* buscarpacporpieza(string aux);
 	vector<cPaciente*> buscarpacporhosp(string aux);
 
-	
+	void operator-(string aux);
+	int operator=(string doc);
 
 	~cANPA();
 private:

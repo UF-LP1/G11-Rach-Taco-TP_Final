@@ -44,7 +44,7 @@ public:
 
 	void operator+(cPaciente* aux);
 
-	void operator-(cPaciente* aux);
+	void operator-(string aux);
 
 	int operator=(string doc);
 
@@ -66,7 +66,7 @@ public:
 	vector<cOrtopedia*>get_convenio();
 	vector<cOrtopedia*> get_noconvenio();
 	
-	
+	cPaciente* buscarpac(string dni);
 	~cHospital();
 
 

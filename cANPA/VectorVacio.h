@@ -8,7 +8,7 @@ class VectorVacio
 {
 	const char* what() const throw(){
 
-		return "El vector esta vacio";
+		return "ERROR: El vector esta vacio";
 		}
 };
 

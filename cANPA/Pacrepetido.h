@@ -8,7 +8,7 @@ class Pacrepetido:public exception
 {
 
 	const char* what() const throw() {
-		return "El paciente se encuentra en la lista";
+		return "ERROR: El paciente ya se encuentra en la lista";
 	}
 
 };

@@ -123,9 +123,12 @@ bool cPaciente::get_protesis()
 	return this->protesis;
 }
 
-void cPaciente::set_protesis(bool aux)
+void cPaciente::set_protesis(int aux)
 {
-	this->protesis = aux;
+	if (aux == 1)
+		this->protesis = true;
+	else
+		this->protesis = false;
 }
 int cPaciente::get_alergiasennum() {
 	Material* aux = this->get_alergias();
@@ -142,24 +145,23 @@ string cPaciente::tostring()
 
 void cPaciente::imprimir()
 {
-	cout << this->tostring();
+	cout << this->tostring()<<endl;
 }
+
+void cPaciente::set_dianac(int aux) {
+	this->FechaNacimiento.tm_mday = aux;
+}
+
+void cPaciente::set_mesnac(int aux) {
+	this->FechaNacimiento.tm_mon = aux-1;
+}
+
+void cPaciente::set_anionac(int aux) {
+	this->FechaNacimiento.tm_year = aux - 1900;
+}
+
 
 cPaciente::~cPaciente()
 {
 }
 
-istream& operator>>(istream& in, cPaciente& aux)
-{
-	
-	in >> aux.Nombre;
-		in >> aux.Apellido;
-		in >> aux.Documento;
-		in >> aux.FechaNacimiento.tm_mday;
-		in >> aux.FechaNacimiento.tm_mon;
-		in >> aux.FechaNacimiento.tm_year;
-		
-		in >> aux.hospital;
-
-		return in;
-}

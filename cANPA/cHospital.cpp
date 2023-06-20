@@ -71,13 +71,14 @@ void cHospital::operator+(cPaciente* aux)
 	if (i != -1)
 		throw new Pacrepetido();
 		this->Pacientes.push_back(aux);
+		
 	return;
 
 }
 
-void cHospital::operator-(cPaciente* aux) 
+void cHospital::operator-(string aux) 
 {
-	int i = this->operator=(aux->get_documento());
+	int i = this->operator=(aux);
 	if (i == -1)
 		throw new PacNoExiste();
 		this->Pacientes.erase(this->Pacientes.begin() + i);
@@ -99,6 +100,7 @@ int cHospital::operator=(string doc)
 	}
 	return k;
 
+
 }
 
 void cHospital::buscarpieza(cPaciente* aux)
@@ -108,18 +110,19 @@ void cHospital::buscarpieza(cPaciente* aux)
 	bool noconv = false;
 	int i = 0,k=0;
 	vector<cOrtopedia*> ort = this->convenios;
-
-	while (i<ort.size()) { // chequeo si el paciente tiene protesis o no
-		while (k<ort[i]->get_piezas().size()) {
-			if (ort[i]->get_piezas()[k]->get_num() == aux->get_protesisnec()->get_num()) {
-				if (chequearAlergia(aux,ort[i]->get_piezas()[k])==false) { //chequeo las alergias y el material
-					this->convenios[i]->entregarpieza(aux->get_protesisnec()); //se le entrega la protesis al paciente
-					aux->set_protesis(true);
+	if (aux->get_protesis() == false) {
+		while (i < ort.size()) { // chequeo si el paciente tiene protesis o no
+			while (k < ort[i]->get_piezas().size()) {
+				if (ort[i]->get_piezas()[k]->get_num() == aux->get_protesisnec()->get_num()) {
+					if (chequearAlergia(aux, ort[i]->get_piezas()[k]) == false) { //chequeo las alergias y el material
+						this->convenios[i]->entregarpieza(aux->get_protesisnec()); //se le entrega la protesis al paciente
+						aux->set_protesis(true);
+					}
 				}
+				k++;
 			}
-			k++;
+			i++;
 		}
-		i++;
 	}
 	i = 0, k = 0;;
 	vector<cOrtopedia*>ortnoconv = this->noconvenio; //chequeo en las que no tiene convenio
@@ -170,6 +173,15 @@ vector<cOrtopedia*> cHospital::get_noconvenio()
 	return this->noconvenio;
 }
 
+
+cPaciente* cHospital::buscarpac(string dni)
+{
+	int i = 0;
+	while (dni != this->Pacientes[i]->get_documento()) {
+		i++;
+	}
+	return this->Pacientes[i];
+}
 
 cHospital::~cHospital()
 {
