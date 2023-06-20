@@ -70,7 +70,6 @@ void cHospital::operator+(cPaciente* aux)
 	int i = this->operator=(aux->get_documento());
 	if (i != -1)
 		throw new Pacrepetido();
-	else
 		this->Pacientes.push_back(aux);
 	return;
 
@@ -81,7 +80,6 @@ void cHospital::operator-(cPaciente* aux)
 	int i = this->operator=(aux->get_documento());
 	if (i == -1)
 		throw new PacNoExiste();
-	else
 		this->Pacientes.erase(this->Pacientes.begin() + i);
 	return;
 
@@ -90,14 +88,14 @@ void cHospital::operator-(cPaciente* aux)
 int cHospital::operator=(string doc) 
 {
 	int i=0,k = -1;
-	bool esta = false;
+	
 	vector<cPaciente*> aux = this->Pacientes;
-	while (esta == false || i<aux.size()) {
+	for (i = 0;i<aux.size() ;i++) {
 		if (aux[i]->get_documento() == doc) {
-			esta = true;
+	
 			k = i;
 		}
-		i++;
+		
 	}
 	return k;
 
@@ -114,7 +112,7 @@ void cHospital::buscarpieza(cPaciente* aux)
 	while (i<ort.size()) { // chequeo si el paciente tiene protesis o no
 		while (k<ort[i]->get_piezas().size()) {
 			if (ort[i]->get_piezas()[k]->get_num() == aux->get_protesisnec()->get_num()) {
-				if (chequearAlergia(aux,ort[i]->get_piezas()[k])) { //chequeo las alergias y el material
+				if (chequearAlergia(aux,ort[i]->get_piezas()[k])==false) { //chequeo las alergias y el material
 					this->convenios[i]->entregarpieza(aux->get_protesisnec()); //se le entrega la protesis al paciente
 					aux->set_protesis(true);
 				}
@@ -129,7 +127,7 @@ void cHospital::buscarpieza(cPaciente* aux)
 		while (i<ortnoconv.size()) {
 			while (k<ortnoconv[i]->get_piezas().size()) {
 				if (ortnoconv[i]->get_piezas()[k]->get_num() == aux->get_protesisnec()->get_num()) {
-					if (chequearAlergia(aux,ortnoconv[i]->get_piezas()[k]) ){
+					if (chequearAlergia(aux,ortnoconv[i]->get_piezas()[k])==false ){
 						this->noconvenio[i]->entregarpieza(aux->get_protesisnec()); //como no dice que la ortopedia puede rechazar la solicitud se la asignamos automaticamente
 						aux->set_protesis(true);
 					}
@@ -191,7 +189,7 @@ ostream& operator<<(ostream& out, const cHospital& aux) {
 	else {
 		for (i = 0; i < aux2.size(); i++) {
 
-			cHospital* aux3 = aux2[i]->get_hospital();
+			
 
 			out << aux2[i]->get_nombre() << endl;
 			out << aux2[i]->get_apellido() << endl;

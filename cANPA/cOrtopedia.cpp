@@ -68,6 +68,11 @@ void cOrtopedia::entregarpieza(cPiezaOrt* aux)
 
 }
 
+void cOrtopedia::agregarpieza(cPiezaOrt* aux)
+{
+	this->PiezasOrt.push_back(aux);
+}
+
 
 
 string cOrtopedia::tostring()

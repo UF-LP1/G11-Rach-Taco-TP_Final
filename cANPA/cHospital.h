@@ -52,7 +52,17 @@ public:
 
 	bool chequearAlergia(cPaciente* aux,cPiezaOrt* ort);
 
+	void agregarconv(cOrtopedia* aux) {
+		this->convenios.push_back(aux);
+	}
+
+	void agregarnoconv(cOrtopedia* aux) {
+		this->noconvenio.push_back(aux);
+	}
 	
+	void agregarMed(cMedico* aux) {
+		this->Medicos.push_back(aux);
+	}
 	vector<cOrtopedia*>get_convenio();
 	vector<cOrtopedia*> get_noconvenio();
 	

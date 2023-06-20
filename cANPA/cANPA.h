@@ -14,7 +14,7 @@ public:
 	vector<cRegistros*> get_registros();
 
 	
-
+	void agregarregistros(cRegistros* aux);
 	cPaciente* buscarpacporpieza(string aux);
 	vector<cPaciente*> buscarpacporhosp(string aux);
 

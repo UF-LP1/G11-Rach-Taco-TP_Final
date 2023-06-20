@@ -25,6 +25,8 @@ public:
 
 	void entregarpieza(cPiezaOrt* aux);
 	
+	void agregarpieza(cPiezaOrt* aux);
+
 	string tostring();
 	void imprimir();
 

@@ -11,7 +11,7 @@ class cPaciente
 {
 public:
 	
-	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,cHospital* hos, Material* Aux, unsigned int radamp,cPiezaOrt* pieznec,bool protesis );
+	cPaciente(string nom, string ape, tm fechanac, string doc, string tel,string hos, Material* Aux, unsigned int radamp,cPiezaOrt* pieznec,bool protesis );
 	
 	Material* get_alergias();
 
@@ -41,8 +41,8 @@ public:
 
 	void set_telefono(string tele);
 
-		cHospital* get_hospital();
-		void set_hospital(cHospital* hosp);
+		string get_hospital();
+		void set_hospital(string hosp);
 		
 		int get_alergiasennum();
 
@@ -50,6 +50,8 @@ public:
 
 		bool get_protesis();
 		void set_protesis(bool aux);
+
+		bool operator==(cPiezaOrt* aux);
 		
 		string tostring();
 		void imprimir();
@@ -69,7 +71,7 @@ private:
 
 	string Telefono;
 
- cHospital* hospital;
+ string hospital;
 
 	Material* Alergias;
 

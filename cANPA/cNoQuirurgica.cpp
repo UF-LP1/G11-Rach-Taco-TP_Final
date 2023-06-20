@@ -25,7 +25,7 @@ cNoQuirurgica::~cNoQuirurgica()
 
 string cNoQuirurgica::tostring() 
 {
-	string resul = this->get_dimensiones() + " " + to_string(this->get_tipoennum()) + " " + to_string(this->get_tren()) + " " + to_string(this->get_fecha().tm_wday) + "/" + to_string(this->get_fecha().tm_mon) + "/" + to_string(this->get_fecha().tm_year) + " " + to_string(this->get_radio())+" "+this->get_num();
+	string resul = this->get_dimensiones() + " " + to_string(this->get_tipoennum()) + " " + to_string(this->get_tren()) + " " + to_string(this->get_fecha().tm_mday) + "/" + to_string(this->get_fecha().tm_mon) + "/" + to_string(this->get_fecha().tm_year) + " "+ this->get_num()+" "+to_string(this->get_radio());
 	return resul;
 
 }

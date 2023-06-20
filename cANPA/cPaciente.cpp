@@ -1,6 +1,6 @@
 #include "cPaciente.h"
 
-cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel,cHospital* hos, Material* aux, unsigned int radamp, cPiezaOrt* pieznec,bool prot)
+cPaciente::cPaciente(string nom, string ape, tm fechanac, string doc, string tel,string hos, Material* aux, unsigned int radamp, cPiezaOrt* pieznec,bool prot)
 {
 	this->Nombre = nom;
 	this->Apellido = ape;
@@ -87,10 +87,29 @@ void cPaciente::set_telefono(string tele)
 	this->Telefono = tele;
 }
 
-cHospital* cPaciente::get_hospital()
+string cPaciente::get_hospital()
 {
 	return this->hospital;
 }
+
+void cPaciente::set_hospital(string aux) {
+	this->hospital = aux;
+}
+
+bool cPaciente::operator==(cPiezaOrt* aux) {
+	bool eslamisma = false;
+
+	if (this->ProtesisNecesaria->get_dimensiones() == aux->get_dimensiones() && this->ProtesisNecesaria->get_fab() == aux->get_fab()
+		&& this->ProtesisNecesaria->get_fecha().tm_mday == aux->get_fecha().tm_mday && this->ProtesisNecesaria->get_fecha().tm_mon == aux->get_fecha().tm_mon &&
+		this->ProtesisNecesaria->get_fecha().tm_year == aux->get_fecha().tm_year && this->ProtesisNecesaria->get_num() == aux->get_num() &&
+		this->ProtesisNecesaria->get_tipo() == aux->get_tipo() && this->ProtesisNecesaria->get_tren() == aux->get_tren()) {
+		eslamisma = true;
+	}
+
+
+	return eslamisma;
+}
+
 
 
 
@@ -116,7 +135,7 @@ int cPaciente::get_alergiasennum() {
 
 string cPaciente::tostring()
 {
-	string resul = this->Nombre + " " + this->Apellido + " " + to_string(this->FechaNacimiento.tm_mday) + "/" + to_string(this->FechaNacimiento.tm_mon) + "/" + to_string(this->FechaNacimiento.tm_year) + " " + this->Documento + " " + this->Telefono + " " + to_string(this->get_alergiasennum()) + " " + to_string(this->RadioAmp) + " " + to_string(this->protesis);
+	string resul = this->Nombre + " " + this->Apellido + " " + to_string(this->FechaNacimiento.tm_mday) + "/" + to_string(this->FechaNacimiento.tm_mon) + "/" + to_string(this->FechaNacimiento.tm_year) + " " + this->Documento + " " + this->Telefono + " " + to_string(this->get_alergiasennum()) + " " + to_string(this->RadioAmp) + " " + to_string(this->protesis)+" "+this->hospital;
 
 	return resul;
 }

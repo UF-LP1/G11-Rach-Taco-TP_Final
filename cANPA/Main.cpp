@@ -47,32 +47,54 @@ int main() {
 
 
 	//creacion de cPacientes
-	cPaciente* Pedro = new cPaciente{ "Pedro","Fritser",fecha,"46336464","1174329433",Fava,nada,4, Pieza,false };
-	cPaciente* Renata = new cPaciente("Renata", "Stasi", fecha, "45739443", "4444444444", Fava, plas, 5, Piezaquir, false);
-	cPaciente* Bautista = new cPaciente{ "Bautista","Rach",fecha,"44632792","36787328",Fava,ace,1,Pieza,false };
-	cPaciente* Stefano = new cPaciente{ "Stefano","Taco",fecha,"45571328","1161521099",Fava,nada,7,Pieza,false };
+	cPaciente* Pedro = new cPaciente{ "Pedro","Fritser",fecha,"46336464","1174329433","Favaloro",nada,4, Pieza,false};
+	cPaciente* Renata = new cPaciente("Renata", "Stasi", fecha, "45739443", "4444444444", "Favaloro", plas, 5, Piezaquir, false);
+	cPaciente* Bautista = new cPaciente{ "Bautista","Rach",fecha,"44632792","36787328","Favaloro",ace,1,Pieza,false};
+	cPaciente* Stefano = new cPaciente{ "Stefano","Taco",fecha,"45571328","1161521099","FAvaloro",nada,7,Pieza,false};
 
 
 
 
 
 	//creacion de cRegistros
-	cRegistros* Reg = new cRegistros(Fava, DR, Piezaquir, Pedro, fecha, fecha, fecha);
+	cRegistros* Reg = new cRegistros(Fava, DR, Pieza, Bautista, fecha, fecha, fecha);
+	cRegistros* Reg2 = new cRegistros{ Fava,DR,Piezaquir,Stefano,fecha,fecha,fecha };
 
-	Fava->get_medicos().push_back(DR);
-	Fava->get_noconvenio().push_back(Ort2);
-	Fava->get_convenio().push_back(Ort);
-	Fava->get_pacientes().push_back(Bautista);
+	Fava->agregarMed(DR);
+	Fava->agregarnoconv(Ort2);
+	Fava->agregarconv(Ort);
+
+	Ort->agregarpieza(Piezaquir);
+	Ort2->agregarpieza(Piezaquir);
+
 	try {
 
 		Fava->operator+(Stefano);
+		Fava->operator+(Bautista);
+		
 	}
 	catch (exception* e) {
-		cout << e->what();
+		cout << e->what()<<endl;
 		delete e;
 	}
-	//cout << Fava->get_pacientes()[0]->get_nombre();
+	/*cout << *Fava;*/
 	
+	cout << Bautista->get_protesis() << endl;
+
+	Fava->buscarpieza(Bautista);
+
+	cout << Bautista->get_protesis();
+	
+	ANPA->agregarregistros(Reg);
+	ANPA->agregarregistros(Reg2);
+	cout << ANPA->buscarpacporpieza(Bautista->get_protesisnec()->get_num())->get_nombre();
+
+	
+	cout<<ANPA->buscarpacporhosp("Favaloro")[0]->get_nombre()<<endl<< ANPA->buscarpacporhosp("Favaloro")[1]->get_nombre()<<endl;
+
+	cout << Bautista->operator==(Piezaquir);
+
+
 	getchar();
 
 

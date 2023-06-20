@@ -22,6 +22,11 @@ vector<cRegistros*> cANPA::get_registros()
 
 
 
+void cANPA::agregarregistros(cRegistros* aux)
+{
+	this->registros.push_back(aux);
+}
+
 cPaciente* cANPA::buscarpacporpieza(string numdeserie) //anyadir numero de serie a la protesis y buscar con eso
 {
  cPaciente* lista=nullptr;
