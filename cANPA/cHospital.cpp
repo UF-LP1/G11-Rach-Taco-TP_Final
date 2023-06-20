@@ -79,7 +79,7 @@ void cHospital::operator+(cPaciente* aux)
 void cHospital::operator-(cPaciente* aux) 
 {
 	int i = this->operator=(aux->get_documento());
-	if (i != -1)
+	if (i == -1)
 		throw new PacNoExiste();
 	else
 		this->Pacientes.erase(this->Pacientes.begin() + i);
@@ -89,14 +89,15 @@ void cHospital::operator-(cPaciente* aux)
 
 int cHospital::operator=(string doc) 
 {
-	int i=0,k = 0;
+	int i=0,k = -1;
 	bool esta = false;
 	vector<cPaciente*> aux = this->Pacientes;
-	while (esta == false) {
+	while (esta == false || i<aux.size()) {
 		if (aux[i]->get_documento() == doc) {
 			esta = true;
 			k = i;
 		}
+		i++;
 	}
 	return k;
 
@@ -161,6 +162,11 @@ bool cHospital::chequearAlergia(cPaciente* aux,cPiezaOrt* ort) {
 
 
 
+vector<cOrtopedia*> cHospital::get_convenio()
+{
+	return this->convenios;
+}
+
 vector<cOrtopedia*> cHospital::get_noconvenio()
 {
 	return this->noconvenio;
@@ -180,38 +186,55 @@ ostream& operator<<(ostream& out, const cHospital& aux) {
 	vector<cMedico*> aux3 = aux.Medicos;
 	vector<cOrtopedia*> conv = aux.convenios;
 	vector<cOrtopedia*> noconv = aux.noconvenio;
+	if (aux2[0] == nullptr)
+		throw new VectorVacio();
+	else {
+		for (i = 0; i < aux2.size(); i++) {
 
-	for (i = 0; i < aux2.size(); i++) {
+			cHospital* aux3 = aux2[i]->get_hospital();
 
-		cHospital* aux3 = aux2[i]->get_hospital();
+			out << aux2[i]->get_nombre() << endl;
+			out << aux2[i]->get_apellido() << endl;
+			out << aux2[i]->get_documento() << endl;
+			out << aux2[i]->get_fecha().tm_year << "/" << aux2[i]->get_fecha().tm_mon << "/" << aux2[i]->get_fecha().tm_mday << endl;
+			out << aux2[i]->get_RadioAmp() << endl;
+			out << aux2[i]->get_telefono() << endl;
+			out << aux2[i]->get_alergias() << endl;
+			out << aux2[i]->get_protesis() << endl;
 
-		out << aux2[i]->get_nombre() << endl;
-		out << aux2[i]->get_apellido() << endl;
-		out << aux2[i]->get_documento() << endl;
-		out << aux2[i]->get_fecha().tm_year << "/" << aux2[i]->get_fecha().tm_mon << "/" << aux2[i]->get_fecha().tm_mday << endl;
-		out << aux2[i]->get_RadioAmp() << endl;
-		out << aux2[i]->get_telefono() << endl;
-		out << aux2[i]->get_alergias() << endl;
-		out << aux2[i]->get_protesis() << endl;
-
+		}
 	}
-	for (i = 0; i < aux3.size(); i++) {
-		out << aux3[i]->get_nombre() << endl;
-		out << aux3[i]->get_apellido() << endl;
-		out << aux3[i]->get_matricula();
+	if (aux3[0] == nullptr)
+		throw new VectorVacio();
+	else {
 
-	}
-	for (i = 0; i < conv.size(); i++) {
-		out << conv[i]->get_direccion() << endl;
-		out << conv[i]->get_especializacion() << endl;
-		out << conv[i]->get_nombre() << endl;
-	}
-	for (i = 0; i < noconv.size(); i++) {
-		out << noconv[i]->get_direccion() << endl;
-		out << noconv[i]->get_especializacion() << endl;
-		out << noconv[i]->get_nombre() << endl;
+		for (i = 0; i < aux3.size(); i++) {
+			out << aux3[i]->get_nombre() << endl;
+			out << aux3[i]->get_apellido() << endl;
+			out << aux3[i]->get_matricula();
 
-		
+		}
+	}
+
+	if (conv[0] == nullptr)
+		throw new VectorVacio();
+	else {
+		for (i = 0; i < conv.size(); i++) {
+			out << conv[i]->get_direccion() << endl;
+			out << conv[i]->get_especializacion() << endl;
+			out << conv[i]->get_nombre() << endl;
+		}
+	}
+	if (noconv[0] == nullptr)
+		throw new VectorVacio();
+	else {
+		for (i = 0; i < noconv.size(); i++) {
+			out << noconv[i]->get_direccion() << endl;
+			out << noconv[i]->get_especializacion() << endl;
+			out << noconv[i]->get_nombre() << endl;
+
+
+		}
 	}
 	return out;
 }

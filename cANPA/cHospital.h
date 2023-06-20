@@ -9,6 +9,7 @@
 #include "Pacrepetido.h"
 #include "PacNoExiste.h"
 #include "cOrtopedia.h"
+#include "VectorVacio.h"
 
 using namespace std;
 enum espe { Cardiologia, Neurologia, Traumatologia, Pediatria };
@@ -52,7 +53,7 @@ public:
 	bool chequearAlergia(cPaciente* aux,cPiezaOrt* ort);
 
 	
-
+	vector<cOrtopedia*>get_convenio();
 	vector<cOrtopedia*> get_noconvenio();
 	
 	
