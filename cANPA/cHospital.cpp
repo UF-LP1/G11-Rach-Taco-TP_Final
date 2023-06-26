@@ -67,9 +67,11 @@ void cHospital::imprimir()
 
 void cHospital::operator+(cPaciente* aux)
 {
-	int i = this->operator=(aux->get_documento());
-	if (i != -1)
+	int i = this->operator=(aux->Documento);
+	if (this->operator=(aux->Documento) != -1) {
 		throw new Pacrepetido();
+	}
+
 		this->Pacientes.push_back(aux);
 		
 	return;
@@ -88,16 +90,26 @@ void cHospital::operator-(string aux)
 
 int cHospital::operator=(string doc) 
 {
+	bool esta = false;
 	int i=0,k = -1;
 	
 	vector<cPaciente*> aux = this->Pacientes;
-	for (i = 0;i<aux.size() ;i++) {
+
+	while (esta == false && i < aux.size()) {
+		if (aux[i]->get_documento() == doc) {
+			esta = true;
+			k = i;
+		}
+		i++;
+	}
+
+	/*for (i = 0;i<aux.size() ;i++) {
 		if (aux[i]->get_documento() == doc) {
 	
 			k = i;
 		}
 		
-	}
+	}*/
 	return k;
 
 

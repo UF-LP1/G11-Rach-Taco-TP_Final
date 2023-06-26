@@ -97,19 +97,36 @@ cOrtopedia::~cOrtopedia()
 
 ostream& operator<<(ostream& out, const cOrtopedia& ort)
 {
-int	i = 0;
-vector<cPiezaOrt*> aux = ort.PiezasOrt;
-for (i = 0; i < aux.size(); i++) {
+	int	i = 0;
+	vector<cPiezaOrt*> aux = ort.PiezasOrt;
+	for (i = 0; i < aux.size(); i++) {
 
-	out << aux[i]->get_dimensiones() << endl;
-	out << aux[i]->get_fecha().tm_year << aux[i]->get_fecha().tm_mon<< aux[i]->get_fecha().tm_mday<<endl;
-	out << aux[i]->get_tipo() << endl;
-	out << aux[i]->get_tren() << endl;
-	/*cNoQuirurgica* noq = dynamic_cast<cNoQuirurgica*>(aux[i]);
-	if (noq != nullptr) {
-		out<<noq->get_radio();
-	}*/
 
-}
+		out << aux[i]->get_dimensiones() << endl;
+		out << aux[i]->get_fecha().tm_year << aux[i]->get_fecha().tm_mon << aux[i]->get_fecha().tm_mday << endl;
+		if (aux[i]->get_tipo() == (Material*)Titanio) {
+			out << "Titanio" << endl;
+		}
+		else if (aux[i]->get_tipo() == (Material*)Acero) {
+			out << "Acero" << endl;
+		}
+		else if (aux[i]->get_tipo() == (Material*)Plastico) {
+			out << "Plastico" << endl;
+		}
+		else
+			out << "Polimero" << endl;
+
+		if (aux[i]->get_tren() == (tren)Superior) {
+
+			out << "Superior" << endl;
+		}
+		else
+			out << "Inferior" << endl;
+
+
+
+
+
+	}
 	return out;
 }

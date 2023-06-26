@@ -91,18 +91,18 @@ int main() {
 	Fava->agregarconv(Ort);
 
 	Ort->agregarpieza(Piezaquir);
-	Ort->agregarpieza(Pieza);
-	Ort->agregarpieza(Pieza);
+	Ort->agregarpieza(Pieza2);
+	Ort->agregarpieza(Piezaquir2);
 	Ort->agregarpieza(Pieza);
 	Ort->agregarpieza(Pieza);
 	Ort2->agregarpieza(Piezaquir);
 
 	try {
 
-		Fava->operator+(Stefano);
-		Fava->operator+(Bautista);
-		Fava->operator+(Pedro);
-		Fava->operator+(Renata);
+		*Fava+Stefano;
+		*Fava+Bautista;
+		*Fava+Pedro;
+		*Fava+Renata;
 		
 	}
 	catch (exception* e) {
@@ -176,7 +176,7 @@ int main() {
 
 			Nuevo = crearpac(nombre, apellido, date, dni, telefono, Fava->get_nombre(), nada, 3, Pieza, prot);
 			try {
-				Fava->operator+(Nuevo);
+				*Fava+Nuevo;
 			}
 			catch (exception* e) {
 				cout << e->what() << endl;
@@ -217,7 +217,7 @@ int main() {
 			cout << "Ingrese el Dni del paciente a eliminar" << endl;
 			cin >> dni;
 			try {
-				ANPA->operator-(dni);
+				*ANPA-dni;
 			}
 			catch (exception* e) {
 				cout << e->what() << endl;
@@ -257,7 +257,27 @@ int main() {
 
 	getchar();
 
-
+	delete ANPA;
+	delete Fabri;
+	delete Fava;
+	delete DR;
+	delete Bautista;
+	delete Stefano;
+	delete Renata;
+	delete Pedro;
+	delete Bot;
+	delete Nuevo;
+	delete Ort;
+	delete Ort2;
+	delete Pieza;
+	delete Pieza2;
+	delete Piezaquir;
+	delete Piezaquir2;
+	delete Reg;
+	delete Reg2;
+	delete Reg3;
+	delete Reg4;
+	delete Reg5;
 
 		
 
