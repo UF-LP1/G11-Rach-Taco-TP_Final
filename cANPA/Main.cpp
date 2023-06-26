@@ -177,13 +177,15 @@ int main() {
 			Nuevo = crearpac(nombre, apellido, date, dni, telefono, Fava->get_nombre(), nada, 3, Pieza, prot);
 			try {
 				*Fava+Nuevo;
+				Reg5 = crearreg(Fava, DR, Pieza, Nuevo, fecha, fecha, fecha);
+				ANPA->agregarregistros(Reg5);
 			}
 			catch (exception* e) {
 				cout << e->what() << endl;
 				delete e;
 			}
-		    Reg5 = crearreg(Fava,DR,Pieza,Nuevo,fecha,fecha,fecha);
-			ANPA->agregarregistros(Reg5);
+		  //  Reg5 = crearreg(Fava,DR,Pieza,Nuevo,fecha,fecha,fecha);
+			//ANPA->agregarregistros(Reg5);
 			break;
 
 		case 2:
